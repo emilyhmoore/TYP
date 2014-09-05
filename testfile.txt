@@ -1,0 +1,3 @@
+This is a sample text file.
+Name	Title	Apt		Pay
+Mary Smith	Director of Things	SC	AB
