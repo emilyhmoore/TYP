@@ -38,23 +38,31 @@ writer.writerow(headers)
 
 ##Trying something else:
 file.seek(0)
+the_list=[]
 for line in file:
 	if ("Level" in line)==False and ("Location" in line)==False and ("Appt." in line)==False and re.search('-{2,}',line)==None and line!='\n':
 		if "\n" in line:
-			the_list=line.strip()
-		the_list=re.split("\s{2,}",the_list) ##split by multiple white space characters
-		#the_list.insert(0, "Legislative") ##Insert Branch as legislative first
-		if '' in the_list:
-			pass
-		else:
-			if "LEGIS" in the_list[0]:
-				pass
-			else:
-				the_list.insert(0, '')
-				if re.search('[A-Z]{4,}\s?[A-Z]*\s?[A-Z]*\s?[A-Z]*', the_list[1])==None:
-					the_list.insert(0, '')
-					the_list.insert(0, '')
-			writer.writerow(the_list)
+			the_list.append(line.strip())
+
+new_list=[]
+for i in range(len(the_list)):
+	new_list.append(re.split("\s{2,}",the_list[i])) ##split by multiple white space characters
+	if [''] in new_list:
+		new_list.remove([''])
+
+for i in range(1,len(new_list)):
+	if len(new_list[i])==1 and re.search('[A-Z]?[a-z]',new_list[i][0])!=None:
+		new_list[i-1].append(new_list[i][0])
+	new_list[i].insert(0, '')
+	if re.search('[A-Z]{4,}\s?[A-Z]*\s?[A-Z]*\s?[A-Z]*', new_list[i][1])==None:
+		new_list[i].insert(0, '')
+		new_list[i].insert(0, '')
+
+for i in range(len(new_list)):	
+	if len(new_list[i])==4 and re.search('[A-Z]?[a-z]',new_list[i][3])!=None:
+		pass
+	else:
+		writer.writerow(new_list[i])
 
 f.close()
 
