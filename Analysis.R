@@ -235,7 +235,25 @@ Apts$id<-abbrlist
 
 Apts$Agency[duplicated(abbrlist)]
 
-Apts$Agency[276:277]
+trialdat[1,vec]
+trialdat[2,vec2]
+trialdat[3,vec3]
+vec<-unlist(!is.na(trialdat[1,]))
+vec2<-unlist(!is.na(trialdat[2,]))
+vec3<-unlist(!is.na(trialdat[3,]))
+
+merger<-function(i, data){
+  vec<-unlist(!is.na(trialdat[i,]))
+  return(data[i,vec])
+}
+merger(1, trialdat)
+
+therow<-unlist(lapply(1:nrow(trialdat),merger, trialdat))
+therow[colnames(Apts)]
+
+
+trialdat<-Apts[965:967,]
+mat<-(!is.na(trialdat))
 
 grep("^AF", Apts$Agency)
 
