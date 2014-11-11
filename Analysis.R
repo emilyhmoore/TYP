@@ -233,30 +233,18 @@ for(i in 1:nrow(Apts)){
 
 Apts$id<-abbrlist
 
-Apts$Agency[duplicated(abbrlist)]
-
-trialdat[1,vec]
-trialdat[2,vec2]
-trialdat[3,vec3]
-vec<-unlist(!is.na(trialdat[1,]))
-vec2<-unlist(!is.na(trialdat[2,]))
-vec3<-unlist(!is.na(trialdat[3,]))
-
-merger<-function(i, data){
-  vec<-unlist(!is.na(trialdat[i,]))
-  return(data[i,vec])
+##make function for the aggregate command below
+myfun<-function(x){
+  ifelse(all(is.na(x)), NA, max(na.omit(x)))
 }
-merger(1, trialdat)
 
-therow<-unlist(lapply(1:nrow(trialdat),merger, trialdat))
-therow[colnames(Apts)]
+##This makes sure that commissions with the same id end up with one line for all of the years 
+##This typically occurs due to different spellings of the same name from year to year
+thetrial<-aggregate(x=Apts, by=list(id=Apts$id), myfun)
+thetrial<-thetrial[,-343] ##remove extra id variable
 
-
-trialdat<-Apts[965:967,]
-mat<-(!is.na(trialdat))
 
 grep("^AF", Apts$Agency)
-
 
 
 
