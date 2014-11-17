@@ -16,6 +16,18 @@ names13<-c("Agency", "CS.Career13", "CD.CareerCond13", "P.ES.SCA13", "P.ES.SCB13
          "Total.NonPermanent13", "Unspecified13", "Total.Appts13")
 
 colnames(Sept13)<-names13
+
+stringlist<-  strsplit(Sept13$Agency, "-")
+
+##Get first part for ID
+abbrlist<-character(536)
+
+for(i in 1:nrow(Sept13)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+
+Sept13$id<-abbrlist
+
 ##################################September 2012####################################
 Sept12<-read.csv("Sept2012Apts..csv", stringsAsFactors=FALSE)
 
@@ -25,6 +37,18 @@ names12<-c("Agency", "CS.Career12", "CD.CareerCond12", "P.ES.SCA12", "P.ES.SCB12
            "NP.ES.SCD12", "NP.ES.Exec12", "NP.ES.Other12", "NP.SES.LimTerm12", "NP.SES.LimEmerg12", 
            "Total.NonPermanent12", "Unspecified12", "Total.Appts12")
 colnames(Sept12)<-names12
+
+stringlist<-  strsplit(Sept12$Agency, "-")
+
+##Get first part for ID
+abbrlist<-character(540)
+
+for(i in 1:nrow(Sept12)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+
+Sept12$id<-abbrlist
+
 ##################################September 2011####################
 Sept11<-read.csv("Sept2011Apts.csv", stringsAsFactors=FALSE)
 
@@ -35,6 +59,17 @@ names11<-c("Agency", "CS.Career11", "CD.CareerCond11", "P.ES.SCA11", "P.ES.SCB11
            "Total.Appts11")
 
 colnames(Sept11)<-names11
+
+stringlist<-  strsplit(Sept11$Agency, "-")
+
+##Get first part for ID
+abbrlist<-character(length(stringlist))
+
+for(i in 1:nrow(Sept11)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+
+Sept11$id<-abbrlist
 ##################################September 2010######################
 Sept10<-read.csv("Sept2010Apts.csv", stringsAsFactors=FALSE)
 
@@ -45,6 +80,18 @@ names10<-c("Agency", "CS.Career10", "CD.CareerCond10", "P.ES.SCA10", "P.ES.SCB10
            "Total.Appts10")
 
 colnames(Sept10)<-names10
+
+stringlist<-  strsplit(Sept10$Agency, "-")
+
+##Get first part for ID
+abbrlist<-character(length(stringlist))
+
+for(i in 1:nrow(Sept10)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+
+Sept10$id<-abbrlist
+
 ##################################September 2009########################################
 Sept09<-read.csv("Sept2009Apts.csv", stringsAsFactors=FALSE)
 
@@ -55,6 +102,18 @@ names09<-c("Agency", "CS.Career09", "CD.CareerCond09", "P.ES.SCA09", "P.ES.SCB09
            "Total.Appts09")
 
 colnames(Sept09)<-names09
+
+stringlist<-  strsplit(Sept09$Agency, "-")
+
+##Get first part for ID
+abbrlist<-character(length(stringlist))
+
+for(i in 1:nrow(Sept09)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+
+Sept09$id<-abbrlist
+
 ##################################September 2008########################################
 Sept08<-read.csv("Sept2008Apts.csv", stringsAsFactors=FALSE)
 
@@ -65,6 +124,18 @@ names08<-c("Agency", "CS.Career08", "CD.CareerCond08", "P.ES.SCA08", "P.ES.SCB08
            "Total.Appts08")
 
 colnames(Sept08)<-names08
+
+stringlist<-  strsplit(Sept08$Agency, "-")
+
+##Get first part for ID
+abbrlist<-character(length(stringlist))
+
+for(i in 1:nrow(Sept08)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+
+Sept08$id<-abbrlist
+
 ##################################September 2007########################################
 Sept07<-read.csv("Sept2007Apts.csv", stringsAsFactors=FALSE)
 
@@ -75,6 +146,18 @@ names07<-c("Agency", "CS.Career07", "CD.CareerCond07", "P.ES.SCA07", "P.ES.SCB07
            "Total.Appts07")
 
 colnames(Sept07)<-names07
+
+stringlist<-  strsplit(Sept07$Agency, "-")
+
+##Get first part for ID
+abbrlist<-character(length(stringlist))
+
+for(i in 1:nrow(Sept07)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+
+Sept07$id<-abbrlist
+
 ##################################September 2006########################################
 Sept06<-read.csv("Sept2006Apts.csv", stringsAsFactors=FALSE)
 
@@ -85,6 +168,18 @@ names06<-c("Agency", "CS.Career06", "CD.CareerCond06", "P.ES.SCA06", "P.ES.SCB06
            "Total.Appts06")
 
 colnames(Sept06)<-names06
+
+stringlist<-  strsplit(Sept06$Agency, "-")
+
+##Get first part for ID
+abbrlist<-character(length(stringlist))
+
+for(i in 1:nrow(Sept06)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+
+Sept06$id<-abbrlist
+
 ##################################September 2005########################################
 Sept05<-read.csv("Sept2005Apts.csv", stringsAsFactors=FALSE)
 
@@ -95,6 +190,18 @@ names05<-c("Agency", "CS.Career05", "CD.CareerCond05", "P.ES.SCA05", "P.ES.SCB05
            "Total.Appts05")
 
 colnames(Sept05)<-names05
+
+stringlist<-  strsplit(Sept05$Agency, "-")
+
+##Get first part for ID
+abbrlist<-character(length(stringlist))
+
+for(i in 1:nrow(Sept05)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+
+Sept05$id<-abbrlist
+
 ##################################September 2004########################################
 Sept04<-read.csv("Sept2004Apts.csv", stringsAsFactors=FALSE)
 
@@ -105,9 +212,21 @@ names04<-c("Agency", "CS.Career04", "CD.CareerCond04", "P.ES.SCA04", "P.ES.SCB04
            "Total.Appts04")
 
 colnames(Sept04)<-names04
-##################################September 2003########################################
-Sept03<-read.csv("Sept2003Apts.csv", stringsAsFactors=FALSE)
 
+stringlist<-  strsplit(Sept04$Agency, "-")
+
+##Get first part for ID
+abbrlist<-character(length(stringlist))
+
+for(i in 1:nrow(Sept04)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+
+Sept04$id<-abbrlist
+
+##################################September 2003########################################
+Sept03<-read.csv("Sept2003Apts2.csv", stringsAsFactors=FALSE)
+Sept03<-Sept03[,-1]
 names03<-c("Agency", "CS.Career03", "CD.CareerCond03", "P.ES.SCA03", "P.ES.SCB03", "ES.Exec03", 
            "ES.Other03", "SES.Career03", "SES.NonCareer03", "P.Unspec03", "Total.Permanent03", 
            "NP.CS03", "NP.ES.SCA03", "NP.ES.SCB03", "NP.ES.SCC03", "NP.ES.Exec03", "NP.ES.Other03",
@@ -115,6 +234,18 @@ names03<-c("Agency", "CS.Career03", "CD.CareerCond03", "P.ES.SCA03", "P.ES.SCB03
            "Total.Appts03")
 
 colnames(Sept03)<-names03
+
+stringlist<-  strsplit(Sept03$Agency, "-")
+
+##Get first part for ID
+abbrlist<-character(length(stringlist))
+
+for(i in 1:nrow(Sept03)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+
+Sept03$id<-abbrlist
+
 ##################################September 2002########################################
 Sept02<-read.csv("Sept2002Apts.csv", stringsAsFactors=FALSE)
 
@@ -126,12 +257,16 @@ names02<-c("Agency", "CS.Career02", "CD.CareerCond02", "P.ES.SCA02", "P.ES.SCB02
 
 colnames(Sept02)<-names02
 
-dupl<-  dupl<-grep("^[A-Z]{2}-", Sept02$Agency)
+stringlist<-  strsplit(Sept02$Agency, "-")
 
-renames<-unlist(lapply(1:length(dupl), FUN=subber, Sept02$Agency, dupl))
+##Get first part for ID
+abbrlist<-character(length(stringlist))
 
-Sept02$Agency[dupl]<-renames
+for(i in 1:nrow(Sept02)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
 
+Sept02$id<-abbrlist
 ##################################September 2001########################################
 Sept01<-read.csv("Sept2001Apts.csv", stringsAsFactors=FALSE)
 
@@ -143,11 +278,17 @@ names01<-c("Agency", "CS.Career01", "CD.CareerCond01", "P.ES.SCA01", "P.ES.SCB01
 
 colnames(Sept01)<-names01
 
-dupl<-grep("^[A-Z]{2}-", Sept01$Agency)
 
-renames<-unlist(lapply(1:length(dupl), FUN=subber, Sept01$Agency, dupl))
+stringlist<-  strsplit(Sept01$Agency, "-")
 
-Sept01$Agency[dupl]<-renames
+##Get first part for ID
+abbrlist<-character(length(stringlist))
+
+for(i in 1:nrow(Sept01)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+Sept01$id<-abbrlist
+
 ##################################September 2000########################################
 Sept00<-read.csv("Sept2000Apts.csv", stringsAsFactors=FALSE)
 
@@ -159,11 +300,22 @@ names00<-c("Agency", "CS.Career00", "CD.CareerCond00", "P.ES.SCA00", "P.ES.SCB00
 
 colnames(Sept00)<-names00
 
-dupl<-  dupl<-grep("^[A-Z]{2}-", Sept00$Agency)
+#dupl<-  dupl<-grep("^[A-Z]{2}-", Sept00$Agency)
 
-renames<-unlist(lapply(1:length(dupl), FUN=subber, Sept00$Agency, dupl))
+#renames<-unlist(lapply(1:length(dupl), FUN=subber, Sept00$Agency, dupl))
 
-Sept00$Agency[dupl]<-renames
+#Sept00$Agency[dupl]<-renames
+
+stringlist<-  strsplit(Sept00$Agency, "-")
+
+##Get first part for ID
+abbrlist<-character(length(stringlist))
+
+for(i in 1:nrow(Sept00)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+
+Sept00$id<-abbrlist
 
 ##################################September 1999########################################
 Sept99<-read.csv("Sept1999Apts.csv", stringsAsFactors=FALSE)
@@ -176,11 +328,21 @@ names99<-c("Agency", "CS.Career99", "CD.CareerCond99", "P.ES.SCA99", "P.ES.SCB99
 
 colnames(Sept99)<-names99
 
-dupl<-  dupl<-grep("^[A-Z]{2}-", Sept99$Agency)
+##May need this code later##
+#dupl<-  dupl<-grep("^[A-Z]{2}-", Sept99$Agency)
+#renames<-unlist(lapply(1:length(dupl), FUN=subber, Sept99$Agency, dupl))
+#Sept99$Agency[dupl]<-renames
 
-renames<-unlist(lapply(1:length(dupl), FUN=subber, Sept99$Agency, dupl))
+stringlist<-  strsplit(Sept99$Agency, "-")
 
-Sept99$Agency[dupl]<-renames
+##Get first part for ID
+abbrlist<-character(length(stringlist))
+
+for(i in 1:nrow(Sept99)){
+  abbrlist[i]<-stringlist[[i]][1]
+}
+
+Sept99$id<-abbrlist
 
 ##################################September 1998########################################
 Sept98<-read.csv("Sept1998Apts.csv", stringsAsFactors=FALSE)
@@ -193,45 +355,43 @@ names98<-c("Agency", "CS.Career98", "CD.CareerCond98", "P.ES.SCA98", "P.ES.SCB98
 
 colnames(Sept98)<-names98
 
-dupl<-  dupl<-grep("^[A-Z]{2}-", Sept98$Agency)
+stringlist<-  strsplit(Sept98$Agency, "-")
 
-renames<-unlist(lapply(1:length(dupl), FUN=subber, Sept98$Agency, dupl))
+##Get first part for ID
+abbrlist<-character(length(stringlist))
 
-Sept98$Agency[dupl]<-renames
-
-######################Merging###############################
-Apts<-merge(Sept13, Sept12, by="Agency", all.x=TRUE, all.y=TRUE)
-Apts2<-merge(Sept11,Sept10, by="Agency", all.x=TRUE, all.y=TRUE)
-Apts3<-merge(Sept09,Sept08, by="Agency", all.x=TRUE, all.y=TRUE)
-Apts4<-merge(Sept07,Sept06, by="Agency", all.x=TRUE, all.y=TRUE)
-Apts5<-merge(Sept05,Sept04, by="Agency", all.x=TRUE, all.y=TRUE)
-Apts6<-merge(Sept03,Sept02, by="Agency", all.x=TRUE, all.y=TRUE)
-Apts7<-merge(Sept01,Sept00, by="Agency", all.x=TRUE, all.y=TRUE)  
-Apts8<-merge(Sept99,Sept98, by="Agency", all.x=TRUE, all.y=TRUE)
-
-Apts9<-merge(Apts,Apts2, by="Agency", all.x=TRUE, all.y=TRUE)
-Apts10<-merge(Apts3,Apts4, by="Agency", all.x=TRUE, all.y=TRUE)
-Apts11<-merge(Apts5,Apts6, by="Agency", all.x=TRUE, all.y=TRUE)
-Apts12<-merge(Apts7,Apts8, by="Agency", all.x=TRUE, all.y=TRUE)
-
-Apts13<-merge(Apts9,Apts10, by="Agency", all.x=TRUE, all.y=TRUE)
-Apts14<-merge(Apts11,Apts12, by="Agency", all.x=TRUE, all.y=TRUE)
-
-Apts<-merge(Apts13,Apts14, by="Agency", all.x=TRUE, all.y=TRUE)
-
-#write.csv(Apts, "Sept98thru13Apts.csv", append=TRUE)
-###############################################
-##Split Agency Heading
-
-stringlist<-  strsplit(Apts$Agency, "-")
-abbrlist<-character(nrow(Apts))
-
-##Get first part
-for(i in 1:nrow(Apts)){
+for(i in 1:nrow(Sept98)){
   abbrlist[i]<-stringlist[[i]][1]
 }
 
-Apts$id<-abbrlist
+Sept98$id<-abbrlist
+
+######################Merging###############################
+Apts<-merge(Sept13, Sept12, by="id", all.x=TRUE, all.y=TRUE)
+Apts2<-merge(Sept11,Sept10, by="id", all.x=TRUE, all.y=TRUE)
+Apts3<-merge(Sept09,Sept08, by="id", all.x=TRUE, all.y=TRUE)
+Apts4<-merge(Sept07,Sept06, by="id", all.x=TRUE, all.y=TRUE)
+Apts5<-merge(Sept05,Sept04, by="id", all.x=TRUE, all.y=TRUE)
+Apts6<-merge(Sept03,Sept02, by="id", all.x=TRUE, all.y=TRUE)
+Apts7<-merge(Sept01,Sept00, by="id", all.x=TRUE, all.y=TRUE)  
+Apts8<-merge(Sept99,Sept98, by="id", all.x=TRUE, all.y=TRUE)
+
+Apts9<-merge(Apts,Apts2, by="id", all.x=TRUE, all.y=TRUE)
+Apts10<-merge(Apts3,Apts4, by="id", all.x=TRUE, all.y=TRUE)
+Apts11<-merge(Apts5,Apts6, by="id", all.x=TRUE, all.y=TRUE)
+Apts12<-merge(Apts7,Apts8, by="id", all.x=TRUE, all.y=TRUE)
+
+Apts13<-merge(Apts9,Apts10, by="id", all.x=TRUE, all.y=TRUE)
+Apts14<-merge(Apts11,Apts12, by="id", all.x=TRUE, all.y=TRUE)
+
+Apts<-merge(Apts13,Apts14, by="id", all.x=TRUE, all.y=TRUE)
+
+#write.csv(Apts, "Sept98thru13Apts.csv", append=TRUE)
+###############################################
+
+colnames(Apts)
+
+
 
 ##make function for the aggregate command below
 myfun<-function(x){
@@ -240,11 +400,103 @@ myfun<-function(x){
 
 ##This makes sure that commissions with the same id end up with one line for all of the years 
 ##This typically occurs due to different spellings of the same name from year to year
-thetrial<-aggregate(x=Apts, by=list(id=Apts$id), myfun)
-thetrial<-thetrial[,-343] ##remove extra id variable
+Appoint<-aggregate(x=Apts, by=list(id=Apts$id), myfun)
+Appoint<-thetrial[,-343] ##remove extra id variable
 
+##Remove DD00, which is a mistake
+Apts<-Apts[-361,]
+##Remove "All Agencies"
+Apts<-Apts[-195,]
 
-grep("^AF", Apts$Agency)
+##Still need to fix 1998, but otherwise, the data appear to be fine
+sum(Apts$Total.Appts98,na.rm=TRUE)
 
+attach(Appoint)
+##Get the total appointments for all agencies over time
 
+##Remove 138, which is "all agencies
+Appoint<-Appoint[-138,]
 
+cols<-grep("Total.Appts", colnames(Appoint))
+TotalOverTime<-apply(Appoint[,cols],2, sum, na.rm=TRUE)
+
+##Get the total for all Schedule C over time
+colsSC<-grep("NP.ES.SCC", colnames(Appoint))
+
+TotalSCOverTime<-apply(Appoint[,colsSC],2, sum, na.rm=TRUE)
+
+TotalSCOverTime
+TotalOverTime
+
+apply(na.omit(Appoint[,217:237]),2,sum)
+
+colnames(Appoint)
+    
+par(mfrow=c(1,1),mar=c(5, 4, 4, 2))
+plot(y=rev(TotalOverTime/1000),x=c(1998:2013),xlim=c(1998,2013), xlab="Year", 
+     ylab="Appointments (In Thousands)", xaxp=c(1998,2013, 15),
+     pch=20, type='o', ylim=c(0,3000),
+     col="black", lwd=2, 
+     main="Total Appointments Over Time")
+abline(v=2000.5, col="red")
+abline(v=2008.5, col="blue")
+plot(y=rev(TotalSCOverTime/1000),x=c(1998:2013), xlim=c(1998,2013), xlab="Year", 
+     ylab="Appointments (In Thousands)", xaxp=c(1998,2013, 15),
+     pch=20, type='o', ylim=c(0,2),
+     col="black", lwd=2, 
+     main="Schedule C Appointments Over Time")
+abline(v=2000.5, col="red")
+abline(v=2008.5, col="blue")
+
+plot(y=TotalSCOverTime/TotalOverTime, x=c(1998:2013), 
+     xlim=c(1998,2013), xlab="Year", 
+     ylab="Appointments (In Thousands)", xaxp=c(1998,2013, 15),
+     pch=20, type='o', ylim=c(0,.001),
+     col="black", lwd=2, ,
+     main="Percentage of All Employees Who Are Schedule C")
+abline(v=2000.5, col="red")
+abline(v=2008.5, col="blue")
+
+#noncompapt<-c(1,2,grep("CS", colnames(Appoint)),grep("CD", colnames(Appoint)), 
+#              grep("Total", colnames(Appoint)))
+
+#summer<-function(i){
+  #ind<-grep("13", colnames(Appoint[,-noncompapt]))
+  #sum(apply(Appoint[,-noncompapt][,ind], 2, sum, na.rm=TRUE))
+#}
+
+write.csv(Appoint, "Appointments1998thru2013.csv")
+
+colsSC<-grep("NP.ES.SCC", colnames(Appoint))
+
+##Discover which agencies have had SC appointments at all in the time period
+
+AnySCs<-apply(Appoint[,colsSC]>0, 1, any, na.rm=TRUE)
+AnySCs
+
+SCindex<-which(AnySCs==TRUE)
+
+any(Appoint[674,colsSC]>0)
+
+totals<-grep("Total.Appts", colnames(Appoint))
+
+##Plot
+par(mfrow=c(4,5), mar=c(1,2,3,1))
+for(i in SCindex){
+  plot(rev(unlist(Appoint[i,colsSC])),x=1998:2013, pch=20, main=Appoint$id[i],
+       ylab="SC Appointments", xlab="Year", type="o", xaxp=c(1998, 2013, 15))
+  abline(v=2000.5, col="red")
+  abline(v=2008.5, col="blue")
+}
+
+for(i in SCindex){
+  plot(rev(unlist(Appoint[i,colsSC]))/rev(unlist(Appoint[i,totals])),x=1998:2013, pch=20, main=Appoint$id[i],
+       ylab="SC Appointments", xlab="Year", type="o", xaxp=c(1998, 2013, 15),
+       ylim=c(0,1))
+  abline(v=2000.5, col="red")
+  abline(v=2008.5, col="blue")
+}
+
+detach(Appoint)
+
+Sept03[,c(1,22)]
