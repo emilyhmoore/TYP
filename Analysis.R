@@ -424,6 +424,7 @@ colsSC<-grep("NP.ES.SCC", colnames(Apts))
 
 TotalSCOverTime<-rev(apply(Apts[,colsSC], 2,FUN=sum, na.rm=TRUE))
 
+####################PLOT TOTAL APTS, SCS, and PERCENTAGE ####################
 par(mfrow=c(1,1),mar=c(5, 4, 4, 2))
 plot(y=TotalOverTime/1000,x=c(1998:2013),xlim=c(1998,2013), xlab="Year", 
      ylab="Appointments (In Thousands)", xaxp=c(1998,2013, 15),
@@ -453,16 +454,15 @@ abline(v=2008.5, col="blue")
 
 #write.csv(Apts, "Appointments1998thru2013.csv")
 
+#####################SCs BY AGENCY PLOTS#############################
 ##Discover which agencies have had SC appointments at all in the time period
 
 AnySCs<-apply(Apts[,colsSC]>0, 1, any, na.rm=TRUE)
-
 SCindex<-which(AnySCs==TRUE)
-
 totals<-grep("Total.Appts", colnames(Apts))
 
 ##Plot
-par(mfrow=c(4,5), mar=c(1,2,3,1))
+par(mfrow=c(4,5), mar=c(2,2,3,2))
 for(i in SCindex){
   plot(rev(unlist(Apts[i,colsSC])),x=1998:2013, pch=20, main=Apts$id[i],
        ylab="SC Appointments", xlab="Year", type="o", xaxp=c(1998, 2013, 15))
@@ -470,14 +470,77 @@ for(i in SCindex){
   abline(v=2008.5, col="blue")
 }
 
-for(i in SCindex){
-  plot(rev(unlist(Appoint[i,colsSC]))/rev(unlist(Appoint[i,totals])),x=1998:2013, pch=20, main=Appoint$id[i],
+Agency[SCindex]
+ind<-grep("Agency", colnames(Apts))
+##Find which ones are not NA and use that for the row
+Agency<-character(nrow(Apts))
+for(i in 1:length(Agency)){
+  Agency[i]<-na.omit(unlist(Apts[i,ind]))[1]
+}
+#Apts$Agency<-Agency
+##Remove extra columns
+#Apts<-Apts[,-ind]
+
+##How many proportions over 5 percent at some point
+mat<-numeric(length(SCindex))
+for(i in 1:length(SCindex)){
+    mat[i]<-max(rev(unlist(Apts[SCindex[i],colsSC]))/rev(unlist(Apts[SCindex[i],totals])),
+                na.rm=TRUE)
+}
+
+mat<-cbind(mat, SCindex)
+mat<-as.data.frame(mat)
+
+MoreThan.05<-(mat[mat$mat>.05,])
+
+for(i in MoreThan.05[,2]){
+  plot(y=rev(unlist(Apts[i,colsSC]))/rev(unlist(Apts[i,totals])),x=1998:2013, pch=20, main=Apts$id[i],
        ylab="SC Appointments", xlab="Year", type="o", xaxp=c(1998, 2013, 15),
        ylim=c(0,1))
   abline(v=2000.5, col="red")
   abline(v=2008.5, col="blue")
 }
 
-detach(Appoint)
+par(mfrow=c(1,1))
+plot(rev(unlist(Apts[Apts$id=="HE10",colsSC])),x=1998:2013, ylim=c(0,60), pch=20, type="o")
+abline(v=2000.5, col="red")
+abline(v=2008.5, col="blue")
 
-Sept03[,c(1,22)]
+##By department
+##Health and Human
+par(mfrow=c(2,2))
+HESCs<-apply(Apts[grep("HE", Apts$id),colsSC], 2, sum, na.rm=TRUE)
+
+plot(rev(HESCs), x=1998:2013, pch=20, type="o", 
+     main="All Health and Human Services", ylim=c(0,80))
+abline(v=2000.5, col="red")
+abline(v=2008.5, col="blue")
+
+##Commerce
+CMSCs<-apply(Apts[grep("^CM", Apts$id),colsSC], 2, sum, na.rm=TRUE)
+
+plot(rev(CMSCs), x=1998:2013, pch=20, type="o", 
+     main="All Commerce", ylim=c(0,125))
+abline(v=2000.5, col="red")
+abline(v=2008.5, col="blue")
+
+EDSCs<-apply(Apts[grep("^ED", Apts$id),colsSC], 2, sum, na.rm=TRUE)
+
+plot(rev(EDSCs), x=1998:2013, pch=20, type="o", 
+     main="All Education", ylim=c(0,200))
+abline(v=2000.5, col="red")
+abline(v=2008.5, col="blue")
+
+
+##Histograms
+par(mfrow=c(4,4))
+
+for(i in 16:1){
+  hist(na.omit(unlist(Apts[,colsSC[i]])), breaks=seq(0,130, by=5), main="Number Apts")
+}
+
+for(i in 16:1){
+  hist(na.omit(unlist(Apts[Apts[,colsSC[i]]>0, colsSC[i]])), 
+       main="Number Apts For Agencies With At Least 1") 
+}
+
