@@ -20,7 +20,7 @@ colnames(Sept13)<-names13
 stringlist<-  strsplit(Sept13$Agency, "-")
 
 ##Get first part for ID
-abbrlist<-character(536)
+abbrlist<-character(length(stringlist))
 
 for(i in 1:nrow(Sept13)){
   abbrlist[i]<-stringlist[[i]][1]
@@ -41,7 +41,7 @@ colnames(Sept12)<-names12
 stringlist<-  strsplit(Sept12$Agency, "-")
 
 ##Get first part for ID
-abbrlist<-character(540)
+abbrlist<-character(length(stringlist))
 
 for(i in 1:nrow(Sept12)){
   abbrlist[i]<-stringlist[[i]][1]
@@ -257,6 +257,12 @@ names02<-c("Agency", "CS.Career02", "CD.CareerCond02", "P.ES.SCA02", "P.ES.SCB02
 
 colnames(Sept02)<-names02
 
+dupl<-grep("^[A-Z]{2}-", Sept02$Agency)
+
+renames<-unlist(lapply(1:length(dupl), FUN=subber, Sept02$Agency, dupl))
+
+Sept02$Agency[dupl]<-renames
+
 stringlist<-  strsplit(Sept02$Agency, "-")
 
 ##Get first part for ID
@@ -267,6 +273,7 @@ for(i in 1:nrow(Sept02)){
 }
 
 Sept02$id<-abbrlist
+
 ##################################September 2001########################################
 Sept01<-read.csv("Sept2001Apts.csv", stringsAsFactors=FALSE)
 
@@ -278,6 +285,11 @@ names01<-c("Agency", "CS.Career01", "CD.CareerCond01", "P.ES.SCA01", "P.ES.SCB01
 
 colnames(Sept01)<-names01
 
+dupl<-  dupl<-grep("^[A-Z]{2}-", Sept01$Agency)
+
+renames<-unlist(lapply(1:length(dupl), FUN=subber, Sept01$Agency, dupl))
+
+Sept01$Agency[dupl]<-renames
 
 stringlist<-  strsplit(Sept01$Agency, "-")
 
@@ -300,11 +312,11 @@ names00<-c("Agency", "CS.Career00", "CD.CareerCond00", "P.ES.SCA00", "P.ES.SCB00
 
 colnames(Sept00)<-names00
 
-#dupl<-  dupl<-grep("^[A-Z]{2}-", Sept00$Agency)
+dupl<-  dupl<-grep("^[A-Z]{2}-", Sept00$Agency)
 
-#renames<-unlist(lapply(1:length(dupl), FUN=subber, Sept00$Agency, dupl))
+renames<-unlist(lapply(1:length(dupl), FUN=subber, Sept00$Agency, dupl))
 
-#Sept00$Agency[dupl]<-renames
+Sept00$Agency[dupl]<-renames
 
 stringlist<-  strsplit(Sept00$Agency, "-")
 
@@ -328,10 +340,9 @@ names99<-c("Agency", "CS.Career99", "CD.CareerCond99", "P.ES.SCA99", "P.ES.SCB99
 
 colnames(Sept99)<-names99
 
-##May need this code later##
-#dupl<-  dupl<-grep("^[A-Z]{2}-", Sept99$Agency)
-#renames<-unlist(lapply(1:length(dupl), FUN=subber, Sept99$Agency, dupl))
-#Sept99$Agency[dupl]<-renames
+dupl<-  dupl<-grep("^[A-Z]{2}-", Sept99$Agency)
+renames<-unlist(lapply(1:length(dupl), FUN=subber, Sept99$Agency, dupl))
+Sept99$Agency[dupl]<-renames
 
 stringlist<-  strsplit(Sept99$Agency, "-")
 
@@ -389,58 +400,40 @@ Apts<-merge(Apts13,Apts14, by="id", all.x=TRUE, all.y=TRUE)
 #write.csv(Apts, "Sept98thru13Apts.csv", append=TRUE)
 ###############################################
 
-colnames(Apts)
 
+##Checks out
+sum(Apts$Total.Appts00, na.rm=TRUE)
 
+##find all columns with Agency in title
+#ind<-grep("Agency", colnames(Apts))
+##Find which ones are not NA and use that for the row
+#Agency<-character(nrow(Apts))
+#for(i in 1:length(Agency)){
+#  Agency[i]<-na.omit(unlist(Apts[i,ind]))[1]
+#}
+#Apts$Agency<-Agency
+##Remove extra columns
+#Apts<-Apts[,-ind]
 
-##make function for the aggregate command below
-myfun<-function(x){
-  ifelse(all(is.na(x)), NA, max(na.omit(x)))
-}
-
-##This makes sure that commissions with the same id end up with one line for all of the years 
-##This typically occurs due to different spellings of the same name from year to year
-Appoint<-aggregate(x=Apts, by=list(id=Apts$id), myfun)
-Appoint<-thetrial[,-343] ##remove extra id variable
-
-##Remove DD00, which is a mistake
-Apts<-Apts[-361,]
-##Remove "All Agencies"
-Apts<-Apts[-195,]
-
-##Still need to fix 1998, but otherwise, the data appear to be fine
-sum(Apts$Total.Appts98,na.rm=TRUE)
-
-attach(Appoint)
 ##Get the total appointments for all agencies over time
 
-##Remove 138, which is "all agencies
-Appoint<-Appoint[-138,]
-
-cols<-grep("Total.Appts", colnames(Appoint))
-TotalOverTime<-apply(Appoint[,cols],2, sum, na.rm=TRUE)
+TotalOverTime<-rev(apply(Apts[,grep("Total.Appts",colnames(Apts))], 2,FUN=sum, na.rm=TRUE))
 
 ##Get the total for all Schedule C over time
-colsSC<-grep("NP.ES.SCC", colnames(Appoint))
+colsSC<-grep("NP.ES.SCC", colnames(Apts))
 
-TotalSCOverTime<-apply(Appoint[,colsSC],2, sum, na.rm=TRUE)
+TotalSCOverTime<-rev(apply(Apts[,colsSC], 2,FUN=sum, na.rm=TRUE))
 
-TotalSCOverTime
-TotalOverTime
-
-apply(na.omit(Appoint[,217:237]),2,sum)
-
-colnames(Appoint)
-    
 par(mfrow=c(1,1),mar=c(5, 4, 4, 2))
-plot(y=rev(TotalOverTime/1000),x=c(1998:2013),xlim=c(1998,2013), xlab="Year", 
+plot(y=TotalOverTime/1000,x=c(1998:2013),xlim=c(1998,2013), xlab="Year", 
      ylab="Appointments (In Thousands)", xaxp=c(1998,2013, 15),
-     pch=20, type='o', ylim=c(0,3000),
+     pch=20, type='o', ylim=c(1000,2500),
      col="black", lwd=2, 
      main="Total Appointments Over Time")
 abline(v=2000.5, col="red")
 abline(v=2008.5, col="blue")
-plot(y=rev(TotalSCOverTime/1000),x=c(1998:2013), xlim=c(1998,2013), xlab="Year", 
+
+plot(y=TotalSCOverTime/1000,x=c(1998:2013), xlim=c(1998,2013), xlab="Year", 
      ylab="Appointments (In Thousands)", xaxp=c(1998,2013, 15),
      pch=20, type='o', ylim=c(0,2),
      col="black", lwd=2, 
@@ -457,33 +450,21 @@ plot(y=TotalSCOverTime/TotalOverTime, x=c(1998:2013),
 abline(v=2000.5, col="red")
 abline(v=2008.5, col="blue")
 
-#noncompapt<-c(1,2,grep("CS", colnames(Appoint)),grep("CD", colnames(Appoint)), 
-#              grep("Total", colnames(Appoint)))
 
-#summer<-function(i){
-  #ind<-grep("13", colnames(Appoint[,-noncompapt]))
-  #sum(apply(Appoint[,-noncompapt][,ind], 2, sum, na.rm=TRUE))
-#}
-
-write.csv(Appoint, "Appointments1998thru2013.csv")
-
-colsSC<-grep("NP.ES.SCC", colnames(Appoint))
+#write.csv(Apts, "Appointments1998thru2013.csv")
 
 ##Discover which agencies have had SC appointments at all in the time period
 
-AnySCs<-apply(Appoint[,colsSC]>0, 1, any, na.rm=TRUE)
-AnySCs
+AnySCs<-apply(Apts[,colsSC]>0, 1, any, na.rm=TRUE)
 
 SCindex<-which(AnySCs==TRUE)
 
-any(Appoint[674,colsSC]>0)
-
-totals<-grep("Total.Appts", colnames(Appoint))
+totals<-grep("Total.Appts", colnames(Apts))
 
 ##Plot
 par(mfrow=c(4,5), mar=c(1,2,3,1))
 for(i in SCindex){
-  plot(rev(unlist(Appoint[i,colsSC])),x=1998:2013, pch=20, main=Appoint$id[i],
+  plot(rev(unlist(Apts[i,colsSC])),x=1998:2013, pch=20, main=Apts$id[i],
        ylab="SC Appointments", xlab="Year", type="o", xaxp=c(1998, 2013, 15))
   abline(v=2000.5, col="red")
   abline(v=2008.5, col="blue")
