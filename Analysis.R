@@ -7,6 +7,7 @@ subber<-function(i, data, dupl=dupl){
   return(y)
 }
 
+colnames(Apts)[1:25]
 ##################################September 2013#####################
 Sept13<-read.csv("Sept2013Apts.csv", stringsAsFactors=FALSE)
 names13<-c("Agency", "CS.Career13", "CD.CareerCond13", "P.ES.SCA13", "P.ES.SCB13", "P.ES.SCD13", 
@@ -48,7 +49,6 @@ for(i in 1:nrow(Sept12)){
 }
 
 Sept12$id<-abbrlist
-
 ##################################September 2011####################
 Sept11<-read.csv("Sept2011Apts.csv", stringsAsFactors=FALSE)
 
@@ -91,7 +91,6 @@ for(i in 1:nrow(Sept10)){
 }
 
 Sept10$id<-abbrlist
-
 ##################################September 2009########################################
 Sept09<-read.csv("Sept2009Apts.csv", stringsAsFactors=FALSE)
 
@@ -113,7 +112,6 @@ for(i in 1:nrow(Sept09)){
 }
 
 Sept09$id<-abbrlist
-
 ##################################September 2008########################################
 Sept08<-read.csv("Sept2008Apts.csv", stringsAsFactors=FALSE)
 
@@ -135,7 +133,6 @@ for(i in 1:nrow(Sept08)){
 }
 
 Sept08$id<-abbrlist
-
 ##################################September 2007########################################
 Sept07<-read.csv("Sept2007Apts.csv", stringsAsFactors=FALSE)
 
@@ -157,7 +154,6 @@ for(i in 1:nrow(Sept07)){
 }
 
 Sept07$id<-abbrlist
-
 ##################################September 2006########################################
 Sept06<-read.csv("Sept2006Apts.csv", stringsAsFactors=FALSE)
 
@@ -179,7 +175,6 @@ for(i in 1:nrow(Sept06)){
 }
 
 Sept06$id<-abbrlist
-
 ##################################September 2005########################################
 Sept05<-read.csv("Sept2005Apts.csv", stringsAsFactors=FALSE)
 
@@ -201,7 +196,6 @@ for(i in 1:nrow(Sept05)){
 }
 
 Sept05$id<-abbrlist
-
 ##################################September 2004########################################
 Sept04<-read.csv("Sept2004Apts.csv", stringsAsFactors=FALSE)
 
@@ -223,7 +217,6 @@ for(i in 1:nrow(Sept04)){
 }
 
 Sept04$id<-abbrlist
-
 ##################################September 2003########################################
 Sept03<-read.csv("Sept2003Apts2.csv", stringsAsFactors=FALSE)
 Sept03<-Sept03[,-1]
@@ -245,7 +238,6 @@ for(i in 1:nrow(Sept03)){
 }
 
 Sept03$id<-abbrlist
-
 ##################################September 2002########################################
 Sept02<-read.csv("Sept2002Apts.csv", stringsAsFactors=FALSE)
 
@@ -273,7 +265,6 @@ for(i in 1:nrow(Sept02)){
 }
 
 Sept02$id<-abbrlist
-
 ##################################September 2001########################################
 Sept01<-read.csv("Sept2001Apts.csv", stringsAsFactors=FALSE)
 
@@ -300,7 +291,6 @@ for(i in 1:nrow(Sept01)){
   abbrlist[i]<-stringlist[[i]][1]
 }
 Sept01$id<-abbrlist
-
 ##################################September 2000########################################
 Sept00<-read.csv("Sept2000Apts.csv", stringsAsFactors=FALSE)
 
@@ -328,7 +318,6 @@ for(i in 1:nrow(Sept00)){
 }
 
 Sept00$id<-abbrlist
-
 ##################################September 1999########################################
 Sept99<-read.csv("Sept1999Apts.csv", stringsAsFactors=FALSE)
 
@@ -354,7 +343,6 @@ for(i in 1:nrow(Sept99)){
 }
 
 Sept99$id<-abbrlist
-
 ##################################September 1998########################################
 Sept98<-read.csv("Sept1998Apts.csv", stringsAsFactors=FALSE)
 
@@ -531,6 +519,7 @@ plot(rev(EDSCs), x=1998:2013, pch=20, type="o",
 abline(v=2000.5, col="red")
 abline(v=2008.5, col="blue")
 
+colnames(Apts)[1:25]
 
 ##Histograms
 par(mfrow=c(4,4))
@@ -543,4 +532,297 @@ for(i in 16:1){
   hist(na.omit(unlist(Apts[Apts[,colsSC[i]]>0, colsSC[i]])), 
        main="Number Apts For Agencies With At Least 1") 
 }
+
+############################Total Excepted Service################
+
+
+##Getting just SCC and Exec
+GroupIncluded<-c("ES.Exec", "SCC")
+
+##Loop through all the options
+IncludedIndex<-list()
+for(i in 1:4){
+  IncludedIndex[[i]]<-grep(GroupIncluded[i], colnames(Apts))
+}
+
+##Sort and unlist them
+IncludedIndex<-sort(unlist(IncludedIndex))
+
+##Just checking
+colnames(Apts)[IncludedIndex]
+
+ES.fun<-function(number){
+  if(number<10){number<-paste("0", as.character(number), sep="")
+  } else {number<-as.character(number)}
+  res<-Apts[,IncludedIndex][,grep(number,colnames(Apts)[IncludedIndex])]
+  TotalIncludedForYear<-apply(res, 1, sum, na.rm=TRUE)
+  return(TotalIncludedForYear)
+}
+
+
+##This gets all of the totals by year and agency
+library(plyr)
+TotalIncludedByYearandAgency<-t(laply(c(98,99,0:13),ES.fun))
+colnames(TotalIncludedByYearandAgency)<-c("ES.98", "ES.99", "ES.00", 
+                                          "ES.01", "ES.02", "ES.03",
+                                          "ES.04", "ES.05", "ES.06",
+                                          "ES.07", "ES.08", "ES.09",
+                                          "ES.10", "ES.11", "ES.12",
+                                          "ES.13")
+
+TotalIncludedByYear<-apply(TotalIncludedByYearandAgency, 2, sum, na.rm=TRUE)
+
+
+##Plots
+plot(y=TotalIncludedByYear/1000,x=c(1998:2013), xlim=c(1998,2013), xlab="Year", 
+     ylab="Appointments (In Thousands)", xaxp=c(1998,2013, 15),
+     pch=20, type='o', ylim=c(0,3),
+     col="black", lwd=2, 
+     main="SCC and XS Exec Appointments Over Time")
+abline(v=2000.5, col="red")
+abline(v=2008.5, col="blue")
+
+dim(TotalIncludedByYearandAgency)
+StaticAttention<-as.data.frame(matrix(NA, nrow=692, ncol=16))
+
+for(i in 1:ncol(StaticAttention)){
+  StaticAttention[,i]<-TotalIncludedByYearandAgency[,i]/TotalIncludedByYear[i]
+}
+
+colnames(StaticAttention)<-c("Attention98", "Attention99", "Attention00", "Attention01", 
+                             "Attention02", "Attention03", "Attention04", "Attention05",
+                             "Attention06", "Attention07", "Attention08", "Attention09",
+                             "Attention10", "Attention11", "Attention12", "Attention13")
+
+rownames(StaticAttention)<-Apts[,1]
+
+####THIS IS FOR 02 and 10
+##Determining which Agencies existed in bothyears for comparison
+Obama02MinusBush10<-StaticAttention$Attention10-StaticAttention$Attention02
+names(Obama02MinusBush10)<-rownames(StaticAttention)
+
+existsin02<-existsin10<-existsin02and10<-logical(nrow(Apts))
+for(i in 1:nrow(Apts)){
+  existsin02[i]<-!any(is.na(Apts[i,249:269]))
+  existsin10[i]<-!any(is.na(Apts[i,73:93]))
+  existsin02and10[i]<-all(c(existsin02[i], existsin10[i]))
+}
+
+DidNotExistinBoth<-which(existsin02and10==FALSE)
+
+##ONLY INCLUDE THOSE AGENCIES THAT EXISTED FOR BOTH PRESIDENTS
+##RUN ONLY ONCE!!!
+Obama02MinusBush10<-Obama02MinusBush10[-DidNotExistinBoth]
+
+###THIS IS FOR 01 and 09
+
+Obama09MinusBush01<-StaticAttention$Attention09-StaticAttention$Attention01
+names(Obama09MinusBush01)<-rownames(StaticAttention)
+
+existsin01<-existsin09<-existsin01and09<-logical(nrow(Apts))
+
+for(i in 1:nrow(Apts)){
+  existsin01[i]<-!any(is.na(Apts[i,grep("01",colnames(Apts))]))
+  existsin09[i]<-!any(is.na(Apts[i,grep("09",colnames(Apts))]))
+  existsin01and09[i]<-all(c(existsin01[i], existsin09[i]))
+}
+
+DidNotExistinBoth01<-which(existsin01and09==FALSE)
+
+##Bush07 MINUS BUSH 06 AGENCIES EXIST IN BOTH
+Obama09MinusBush01<-Obama09MinusBush01[-DidNotExistinBoth01]
+
+#########Bush 06 and 07
+Bush07MinusBush06<-StaticAttention$Attention07-StaticAttention$Attention06
+names(Bush07MinusBush06)<-rownames(StaticAttention)
+
+existsin06<-existsin07<-existsin06and07<-logical(nrow(Apts))
+
+for(i in 1:nrow(Apts)){
+  existsin06[i]<-!any(is.na(Apts[i,grep("06",colnames(Apts))]))
+  existsin07[i]<-!any(is.na(Apts[i,grep("07",colnames(Apts))]))
+  existsin06and07[i]<-all(c(existsin06[i], existsin07[i]))
+}
+
+DidNotExistinBoth06<-which(existsin06and07==FALSE)
+##Bush07 Minus Bush 06 Agencies Exist in both
+Bush07MinusBush06<-Bush07MinusBush06[-DidNotExistinBoth06]
+
+#########Obama11 and 10
+Obama11MinusObama10<-StaticAttention$Attention11-StaticAttention$Attention10
+names(Obama11MinusObama10)<-rownames(StaticAttention)
+
+existsin10<-existsin11<-existsin10and11<-logical(nrow(Apts))
+
+for(i in 1:nrow(Apts)){
+  existsin10[i]<-!any(is.na(Apts[i,grep("10",colnames(Apts))]))
+  existsin11[i]<-!any(is.na(Apts[i,grep("11",colnames(Apts))]))
+  existsin10and11[i]<-all(c(existsin10[i], existsin11[i]))
+}
+
+DidNotExistinBoth10<-which(existsin10and11==FALSE)
+##Obama 11 Minus Obama 10 Agencies Exist in both
+Obama11MinusObama10<-Obama11MinusObama10[-DidNotExistinBoth10]
+
+##Plot 02 and 10
+par(mar=c(3,1,2,1))
+dat<-sort(round(Obama02MinusBush10,5))
+
+colors<-c("red4",rep("red3", 5), rep("red2", 5), rep("red",10), 
+          rep("violetred", 59), rep("maroon4", 65), rep("purple",178), rep("slateblue4", 43), 
+          rep("mediumpurple",35), rep("blue",10), rep("blue2",5), rep("blue3",5), rep("blue4",2))
+
+plot(x=dat, y=rep(1,413),pch="", main="Bush '02 and Obama '10",
+           cex.axis=0.6, col=colors, yaxt="n")
+segments(x0=dat, y0=1.2, y1=0.8, x1=dat, col=colors,lwd=2)
+
+text(dat[c(1:4,405:413)],c(rep(c(1.2,0.8),5), 1.2,1.2,1.2),names(dat[c(1:4,405:413)]),
+     pos=c(rep(c(3,1), 5), 3,3,3), 
+     cex=0.6, las=3)
+abline(h=1,lwd=2)
+abline(v=0, col="gray", lty=2)
+
+legend(x=-.0165,y=1.4, c("More Attention from Bush than Obama"), cex=0.85,bty="n")
+legend(x=.001, y=1.4, c("More Attention from Obama than Bush"), cex=0.85,bty="n")
+
+par(mar=c(5, 4, 4, 2))
+hist(dat, main="Obama10-Bush02", xlab="", breaks=50)
+
+##PLOT 01 and 09
+par(mar=c(3,1,2,1))
+dat01<-sort(round(Obama09MinusBush01,5))
+
+length(which(dat01<0))
+
+colors01<-c("red4",rep("red3", 5), rep("red2", 5), rep("red",10), 
+          rep("violetred", 48), rep("maroon4", 55), rep("purple",199), rep("slateblue4", 43), 
+          rep("mediumpurple",25), rep("blue",7), rep("blue2",5), rep("blue3",5), rep("blue4",2))
+
+plot(x=dat01, y=rep(1,410),pch="", main="Bush '01 and Obama '09",
+     cex.axis=0.6, col=colors, yaxt="n")
+segments(x0=dat01, y0=1.2, y1=0.8, x1=dat01, col=colors01,lwd=1)
+
+text(dat01[c(1:4,405:410)],c(rep(c(1.2,0.8),3), 1.2,1.2,1.2,1.2),names(dat01[c(1:4,405:413)]),
+     pos=c(rep(c(3,1), 3), 3,3,3), 
+     cex=0.6, las=3)
+abline(h=1,lwd=2)
+abline(v=0, col="gray", lty=2)
+
+legend(x=-.04,y=1.4, c("More Attention from Bush than Obama"), cex=0.85,bty="n")
+legend(x=.001, y=1.4, c("More Attention from Obama than Bush"), cex=0.85,bty="n")
+
+par(mar=c(5, 4, 4, 2))
+hist(dat01, main="Obama09-Bush01", xlab="", breaks=50)
+
+#################################
+##Plot 06 and 07
+par(mar=c(3,1,2,1))
+dat06<-sort(round(Bush07MinusBush06,5))
+
+length(which(dat06>0))
+colors06<-c("red4",rep("red3", 5), rep("red2", 10), rep("red",25), 
+            rep("violetred", 68), rep("maroon4", 75), rep("purple",257), rep("slateblue4", 34), 
+            rep("mediumpurple",25), rep("blue",7), rep("blue2",5), rep("blue3",5), rep("blue4",2))
+
+plot(x=dat06, y=rep(1,519),pch="", main="Bush '06 and Bush '07",
+     cex.axis=0.6, col=colors, yaxt="n")
+segments(x0=dat06, y0=1.2, y1=0.8, x1=dat06, col=colors06,lwd=2)
+
+text(dat06[c(1:6,515:519)],c(1.2,1.2,1.2,1.2,rep(c(1.2,0.8),3),1.2),names(dat06[c(1:6,515:519)]),
+     pos=c(3,3,3,3,rep(c(3,1), 3), 3), 
+     cex=0.6, las=3)
+abline(h=1,lwd=2)
+abline(v=0, col="gray", lty=2)
+
+legend(x=-.0075,y=1.4, c("More Attention With Republican Congress"), cex=0.85,bty="n")
+legend(x=-.0005, y=1.4, c("More Attention with Democratic Congress"), cex=0.85,bty="n")
+
+par(mar=c(5, 4, 4, 2))
+hist(dat06, main="Bush07-Bush06", xlab="", breaks=25)
+
+
+#################################
+##Plot 10 and 11
+par(mar=c(3,1,2,1))
+dat10<-sort(round(Obama11MinusObama10,5))
+
+length(which(dat10<0))
+colors06<-c("red4",rep("red3", 5), rep("red2", 5), rep("red",10), 
+            rep("violetred", 38), rep("maroon4", 53), rep("purple",340), rep("slateblue4", 34), 
+            rep("mediumpurple",21), rep("blue",7), rep("blue2",5), rep("blue3",5), rep("blue4",2))
+
+plot(x=dat10, y=rep(1,526),pch="", main="Obama '10 and Obama '11",
+     cex.axis=0.6, col=colors, yaxt="n")
+segments(x0=dat10, y0=1.2, y1=0.8, x1=dat10, col=colors06,lwd=2)
+
+text(dat10[c(1:6,521:526)],c(1.2,1.2,1.2,1.2,rep(c(1.2,0.8),3),1.2,1.2),names(dat10[c(1:6,521:526)]),
+     pos=c(3,3,3,3,rep(c(3,1), 3), 3,3), 
+     cex=0.6, las=3)
+abline(h=1,lwd=2)
+abline(v=0, col="gray", lty=2)
+
+legend(x=-.009,y=1.4, c("More Attention With Democratic Congress"), cex=0.8,bty="n")
+legend(x=.002, y=1.4, c("More Attention with Republican Congress"), cex=0.8,bty="n")
+
+par(mar=c(5, 4, 4, 2))
+hist(dat06, main="Bush07-Bush06", xlab="", breaks=25)
+
+#####For tables
+Apts[grep("DJ01", Apts[,1]),2]
+
+stargazer(cbind(dat10[c(1:10)],names(rev(dat10[517:526])), rev(dat10[517:526])))
+
+
+StaticAttention
+
+plot(unlist(StaticAttention[grep("HSAA", rownames(StaticAttention)),6:16]))
+
+##Homeland Security HQ
+ProportionQualified<-TotalIncludedByYearandAgency/rev(Apts[,totals])
+rownames(ProportionQualified)<-rownames(TotalIncludedByYearandAgency)<-Apts[,1]
+
+par(mar=c(4,3,2,2), mfrow=c(1,2))
+plot(unlist(ProportionQualified[grep("HSAA", rownames(ProportionQualified)),6:16]), 
+     x=c(2003:2013), xlab="Year", ylab="", main="Proportion HSAA that is SC or ESE",
+     pch=20, type="o", ylim=c(0,1), lwd=2)
+abline(v=2008.5, col="blue")
+
+par(mar=c(4,1,2,2))
+plot(unlist(TotalIncludedByYearandAgency[grep("HSAA", rownames(TotalIncludedByYearandAgency)),6:16]), 
+     x=c(2003:2013), xlab="Year", ylab="", main="Number HSAA that is SC or ESE",
+     pch=20, type="o", lwd=2, ylim=c(0,90))
+abline(v=2008.5, col="blue")
+
+grep("FAITH", Apts[,2]) ##484/HUKA
+
+##Plot Faith Based Initiatives
+par(mar=c(4,2,2,2))
+plot(unlist(ProportionQualified[grep("HUKA", rownames(ProportionQualified)),6:16]), 
+     x=c(2003:2013), xlab="Year", ylab="", main="Proportion HUKA that is SC or ESE",
+     pch=20, type="o", ylim=c(0,1), lwd=2)
+abline(v=2008.5, col="blue")
+
+##find the 
+Liaison<-c(grep("AFFAIRS", Apts[,2]), grep("HUJJ", Apts[,2]))
+
+##Remove Indian Affairs and Air Force Public Affairs
+Liaison<-Liaison[-c(1,8)]
+
+##Remove some of the less interesting ones
+Liaison<- Liaison[-c(1,5,8,9,11)]
+
+##Reorder
+Liaison<-Liaison[c(1:4, 7, 5:6)]
+
+Names<-c("Labor Cong and Intergov Affairs", "Labor Public Affairs", "Education Leg and Cong Affairs", 
+         "HUD Ast. Sec. Public Affairs", "HUD Ast. Sec Cong. Intergov Relations", "VA Ast. Sec. for Pub. and Intergov Affairs", "VA Ast. Sec. for Cong and Leg Affairs")
+
+par(mfrow=c(3,3), mar=c(2,2,4,2))
+for (i in 1: length(Liaison)){
+  plot(unlist(ProportionQualified[Liaison[i],]), x=c(1998:2013), xlab="", ylab="",
+       type="o", lwd=2, pch=19, ylim=c(0,1), main=Names[i],cex=0.7, 
+       cex.main=0.8, cex.axis=0.7) 
+}
+
+
 
