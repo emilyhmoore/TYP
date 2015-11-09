@@ -978,20 +978,21 @@ plot(y=TotalAccessionsIncludedByYear/1000,x=c(2005:2013), xlim=c(2005,2013), xla
      main="XS Exec and SCC Accessions Over Time")
 abline(v=2008.5, col="blue")
 
+par(mar=c(5,4,4,2))
 plot(y=TotalIncludedByYear/1000,x=c(1998:2013), xlim=c(1998,2013), xlab="Year", 
      ylab="Appointments (In Thousands)", xaxp=c(1998,2013, 15),
-     pch=20, type='o', ylim=c(0,3),
+     pch=20, type='o', ylim=c(0,3.3),
      col="black", lwd=2, 
-     main="XS Exec and SC Appointments Over Time")
+     main="Excepted Service Executive and Schedule C Appointments Over Time")
 abline(v=2000.5, col="red")
 abline(v=2008.5, col="blue")
 
 lines(y=TotalAccessionsIncludedByYear/1000,x=c(2005:2013), type="o",pch=20, col="purple")
 
+legend(x=2000,y=3.6, legend=c("Total Number of Appointments", "Total Accessions"), 
+       lty=c(1,1), col=c("black", "purple"), bty="n", lwd=3, y.intersp=0.7, seg.len=1)
+
 TotalAccessionsIncludedByYear/TotalIncludedByYear[8:16]
-
-
-TotalAccessionsIncludedByYearandAgency
 
 ##THIS IS FOR TOTAL ACCESSIONS OF ALL TYPES
 TotalsIndex<-grep("Total.Accessions",colnames(Accessions))

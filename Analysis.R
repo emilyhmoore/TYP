@@ -668,6 +668,20 @@ Obama11MinusObama10<-Obama11MinusObama10[-DidNotExistinBoth10]
 par(mar=c(3,1,2,1))
 dat<-sort(round(Obama02MinusBush10,5))
 
+summary(dat)
+mean(dat)-sd(dat)*2
+mean(unlist(StaticAttention))+2*sd(unlist(StaticAttention))
+
+
+
+table(dat)
+
+#points(x=-.013,y=0, pch=19)
+#points(x=rep(0, 27), y=seq(0,260,by=10), pch=20, cex=3)
+#points(x=rep(0.001,7), y=seq(0,60, by=10), pch=20, cex=3)
+#points(x=rep(0.002, 2), y=c(0,10), pch=20, cex=3)
+
+
 colors<-c("red4",rep("red3", 5), rep("red2", 5), rep("red",10), 
           rep("violetred", 59), rep("maroon4", 65), rep("purple",178), rep("slateblue4", 43), 
           rep("mediumpurple",35), rep("blue",10), rep("blue2",5), rep("blue3",5), rep("blue4",2))
@@ -783,23 +797,14 @@ rownames(ProportionQualified)<-rownames(TotalIncludedByYearandAgency)<-Apts[,1]
 
 par(mar=c(4,3,2,2), mfrow=c(1,2))
 plot(unlist(ProportionQualified[grep("HSAA", rownames(ProportionQualified)),6:16]), 
-     x=c(2003:2013), xlab="Year", ylab="", main="Proportion HSAA that is SC or ESE",
+     x=c(2003:2013), xlab="Year", ylab="", main="Proportion Homeland Security Headquarters that is SC or ESE",
      pch=20, type="o", ylim=c(0,1), lwd=2)
 abline(v=2008.5, col="blue")
 
 par(mar=c(4,1,2,2))
 plot(unlist(TotalIncludedByYearandAgency[grep("HSAA", rownames(TotalIncludedByYearandAgency)),6:16]), 
-     x=c(2003:2013), xlab="Year", ylab="", main="Number HSAA that is SC or ESE",
+     x=c(2003:2013), xlab="Year", ylab="", main="Number in Homeland Security Headquarters that is SC or ESE",
      pch=20, type="o", lwd=2, ylim=c(0,90))
-abline(v=2008.5, col="blue")
-
-grep("FAITH", Apts[,2]) ##484/HUKA
-
-##Plot Faith Based Initiatives
-par(mar=c(4,2,2,2))
-plot(unlist(ProportionQualified[grep("HUKA", rownames(ProportionQualified)),6:16]), 
-     x=c(2003:2013), xlab="Year", ylab="", main="Proportion HUKA that is SC or ESE",
-     pch=20, type="o", ylim=c(0,1), lwd=2)
 abline(v=2008.5, col="blue")
 
 ##find the 
@@ -814,8 +819,8 @@ Liaison<- Liaison[-c(1,5,8,9,11)]
 ##Reorder
 Liaison<-Liaison[c(1:4, 7, 5:6)]
 
-Names<-c("Labor Cong and Intergov Affairs", "Labor Public Affairs", "Education Leg and Cong Affairs", 
-         "HUD Ast. Sec. Public Affairs", "HUD Ast. Sec Cong. Intergov Relations", "VA Ast. Sec. for Pub. and Intergov Affairs", "VA Ast. Sec. for Cong and Leg Affairs")
+Names<-c("Labor Congressional Affairs", "Labor Public Affairs", "Education Legislative Affairs", 
+         "HUD Public Affairs", "HUD Congressional Relations", "VA Public and Intergovernmental Affairs", "VA Congressional and Legislative Affairs")
 
 par(mfrow=c(3,3), mar=c(2,2,4,2))
 for (i in 1: length(Liaison)){
@@ -825,4 +830,76 @@ for (i in 1: length(Liaison)){
 }
 
 
+##Proportion of Schedule C and ESE over time
+MeanProportionIncludedbyYear<-apply(TotalIncludedByYearandAgency/rev(Apts[,totals]),2, mean, na.rm=TRUE)
+
+plot(y=MeanProportionIncludedbyYear,x=c(1998:2013), pch=20, type="o",ylab="",xlab="Year",
+     ylim=c(0,1), main="Average Proportion of Schedule C and ESE in an Agency")
+
+library(plyr)
+
+##Histogram for Bush 02 and Obama 10
+hist(dat, 50, main="Change in Attention: Obama('10) Minus Bush ('02)", xlab="")
+##Add arrows
+l_ply(c(-.01375, -.00725, -.00675, -.00475, -.00425, .01225), 
+      arrows,y0=75,y1=10, length=0.15)
+l_ply(c(-.00675, .01075), arrows,y0=100,y1=10, length=0.15)
+l_ply(c(-.00475, .00975), arrows,y0=120,y1=10, length=0.15)
+l_ply(c(-.00425, .00575), arrows,y0=150,y1=10, length=0.15)
+l_ply(c(.00525), arrows,y0=170,y1=10, length=0.15)
+l_ply(c(.00425), arrows,y0=200,y1=10, length=0.15)
+text(-.013,80, "Office U.S. Attorney")
+text(-.008,85, "Postsecondary Education")
+text(-.0083,110, "Elementary and Secondary Education")
+text(-.007,140, "Office of Justice Programs")
+text(-.007,130, "Office Secretary of Education")
+text(-.00425,160, "OMB")
+text(-.00425,170, "USAID")
+text(-.00425,180, "Foreign Agricultural Service")
+text(-.00425,190, "EPA")
+text(-.00425,200, "International Trade Administration")
+text(.0115,80, "U.S. Marshal's Service")
+text(.01075,105, "Treasury Departmental Offices")
+text(.00975,125, "Office of Defense Secretary")
+text(.0078,155, "Office Secretary of Interior")
+text(.0079,165, "Board of Veteran's Appeals")
+text(.0078,180, "Justice Offices, Boards, and Divisions")
+text(.00425,240, "Consumer Product Safety Commission")
+text(.00425,230, "Office HHS Secretary")
+text(.00425,220, "Overseas Private Investment Corps")
+text(.00425,210, "International Trade Comission")
+
+
+hist(dat01, 50, main="Change in Attention: Obama('09) Minus Bush('01)", xlab="") 
+l_ply(c(-.0355, -.0125, .0165), 
+      arrows,y0=75,y1=10, length=0.15)
+l_ply(c(-.0105,.0125 ), 
+      arrows,y0=90,y1=10, length=0.15)
+l_ply(c(-.0085, .0085), 
+      arrows,y0=105,y1=10, length=0.15)
+l_ply(c(-.0075, .0065), 
+      arrows,y0=120,y1=10, length=0.15)
+l_ply(c(-.0065, .0055, .0275), 
+      arrows,y0=135,y1=10, length=0.15)
+text(-.032, 85, "U.S. Marshal's Service" )
+text(-.016, 85, "Labor Secretary Office")
+text(-.0145, 100, "Postsecondary Education")
+text(-.013, 115, "Farm Service Agency")
+text(-.013, 130, "HUD Human Capital Office")
+text(-.009, 145, "Rural Housing Service")
+text(-.01, 155, "Elementary and Secondary Education")
+text(.0055, 145, "Secretary Interior Office")
+text(.025, 145, "State Department")
+text(.017, 85, "Office U.S. Attorney")
+text(.015, 100, "Secretary of Defense Office")
+text(.0138,115, "Treasury Departmental Offices")
+text(.012,130, "Board of Veteran's Appeals")
+
+par(mfrow=c(1,2))
+par(mar=c(2,3,2,2))
+plot(unlist(ProportionQualified[Liaison[1],]), x=c(1998:2013), xlab="", ylab="",
+     type="o", lwd=2, pch=20, ylim=c(0,1), main="Proportion SC and ESE in Labor Congressional Affairs Office") 
+par(mar=c(2,1,2,3))
+plot(y=MeanProportionIncludedbyYear,x=c(1998:2013), pch=20, type="o",ylab="",xlab="Year",
+     ylim=c(0,1), lwd=2, main="Average Proportion of SC and ESE in an Agency")
 

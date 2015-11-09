@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.8.28)  6 JAN 2015 13:54
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.8.28)  12 JAN 2015 13:21
 entering extended mode
 **ToughChoicesTYPDraft1.tex
 ("C:\Users\emily m\Documents\GitHub\TYP\ToughChoicesTYPDraft1.tex"
@@ -309,123 +309,129 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {C:/Users/emily m/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-[2] [3] [4] [5]
+[2] [3] [4]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 44.
+(Font)              <12> on input line 42.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 44.
+(Font)              <8> on input line 42.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 44.
+(Font)              <6> on input line 42.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 44.
- <RPlot.pdf, id=21, 794.97pt x 614.295pt>
+(Font)              <5> on input line 42.
+ [5] [6] [7] <RPlot.pdf, id=32, 794.97pt x 614.295pt>
 File: RPlot.pdf Graphic file (type pdf)
- <use RPlot.pdf>
-Package pdftex.def Info: RPlot.pdf used on input line 53.
-(pdftex.def)             Requested size: 361.36014pt x 289.08424pt.
 
-[6] [7 <C:/Users/emily m/Documents/GitHub/TYP/RPlot.pdf>] [8] [9] [10] [11]
-[12] <DHSProportionRawNumber.pdf, id=54, 722.7pt x 361.35pt>
+<use RPlot.pdf>
+Package pdftex.def Info: RPlot.pdf used on input line 61.
+(pdftex.def)             Requested size: 433.63217pt x 361.35297pt.
+ [8] [9 <C:/Users/emily m/Documents/GitHub/TYP/RPlot.pdf>]
+[10] [11] [12] [13] <DHSProportionRawNumber.pdf, id=58, 1228.59pt x 578.16pt>
 File: DHSProportionRawNumber.pdf Graphic file (type pdf)
 
 <use DHSProportionRawNumber.pdf>
-Package pdftex.def Info: DHSProportionRawNumber.pdf used on input line 102.
-(pdftex.def)             Requested size: 451.68639pt x 216.81168pt.
- [13 <C:/Users/emily m/Documents/GitHub/TYP/DHSProportionRawNumber.pdf>]
-<LegislativeAffairsProportions.pdf, id=65, 578.16pt x 578.16pt>
+Package pdftex.def Info: DHSProportionRawNumber.pdf used on input line 106.
+(pdftex.def)             Requested size: 451.68419pt x 216.80946pt.
+ [14] [15 <C:/Users/emily m/Documents/GitHub/TYP/DHSProportionRawNumber.pdf>]
+<LegislativeAffairsProportions.pdf, id=71, 722.7pt x 722.7pt>
 File: LegislativeAffairsProportions.pdf Graphic file (type pdf)
 
 <use LegislativeAffairsProportions.pdf>
 Package pdftex.def Info: LegislativeAffairsProportions.pdf used on input line 1
-14.
-(pdftex.def)             Requested size: 397.48402pt x 397.48402pt.
- [14 <C:/Users/emily m/Documents/GitHub/TYP/LegislativeAffairsProportions.pdf>]
- [15] [16]
-<Bush01andObama09.pdf, id=81, 794.97pt x 505.89pt>
-File: Bush01andObama09.pdf Graphic file (type pdf)
- <use Bush01andObama09.pdf>
-Package pdftex.def Info: Bush01andObama09.pdf used on input line 139.
-(pdftex.def)             Requested size: 451.6941pt x 289.08589pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 148.
-
-Overfull \hbox (58.72183pt too wide) in paragraph at lines 148--164
- [][] 
- []
-
-[17 <C:/Users/emily m/Documents/GitHub/TYP/Bush01andObama09.pdf>]
-<Bush02andObama10.pdf, id=91, 794.97pt x 505.89pt>
-File: Bush02andObama10.pdf Graphic file (type pdf)
- <use Bush02andObama10.pdf>
-Package pdftex.def Info: Bush02andObama10.pdf used on input line 172.
-(pdftex.def)             Requested size: 451.6941pt x 289.08589pt.
-
-Overfull \hbox (47.2675pt too wide) in paragraph at lines 181--197
- [][] 
- []
-
-[18] [19 <C:/Users/emily m/Documents/GitHub/TYP/Bush02andObama10.pdf>]
-<Bush06andBush07.pdf, id=105, 794.97pt x 505.89pt>
-File: Bush06andBush07.pdf Graphic file (type pdf)
- <use Bush06andBush07.pdf>
-Package pdftex.def Info: Bush06andBush07.pdf used on input line 211.
-(pdftex.def)             Requested size: 451.6941pt x 289.08589pt.
-
-Overfull \hbox (57.56093pt too wide) in paragraph at lines 220--236
- [][] 
- []
-
-[20] [21 <C:/Users/emily m/Documents/GitHub/TYP/Bush06andBush07.pdf>]
-<Obama10andObama11.pdf, id=118, 794.97pt x 505.89pt>
-File: Obama10andObama11.pdf Graphic file (type pdf)
-
-<use Obama10andObama11.pdf>
-Package pdftex.def Info: Obama10andObama11.pdf used on input line 249.
-(pdftex.def)             Requested size: 451.6941pt x 289.08589pt.
-
-Overfull \hbox (25.96255pt too wide) in paragraph at lines 258--274
- [][] 
- []
-
-[22 <C:/Users/emily m/Documents/GitHub/TYP/Obama10andObama11.pdf>] [23]
-<RegressionResults.pdf, id=131, 289.08pt x 289.08pt>
+20.
+(pdftex.def)             Requested size: 433.62334pt x 433.62334pt.
+ [16 <C:/Users/emily m/Documents/GitHub/TYP/LegislativeAffairsProportions.pdf>]
+ [17]
+<RegressionResults.pdf, id=84, 289.08pt x 289.08pt>
 File: RegressionResults.pdf Graphic file (type pdf)
 
 <use RegressionResults.pdf>
-Package pdftex.def Info: RegressionResults.pdf used on input line 318.
+Package pdftex.def Info: RegressionResults.pdf used on input line 169.
 (pdftex.def)             Requested size: 216.80946pt x 216.80946pt.
- [24] [25 <C:/Users/emily m/Documents/GitHub/TYP/RegressionResults.pdf>]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 345.
+ [18] [19 <C:/Users/emily m/Documents/GitHub/TYP/RegressionResults.pdf>] [20] <
+Bush01andObama09.pdf, id=103, 794.97pt x 505.89pt>
+File: Bush01andObama09.pdf Graphic file (type pdf)
 
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
+<use Bush01andObama09.pdf>
+Package pdftex.def Info: Bush01andObama09.pdf used on input line 194.
+(pdftex.def)             Requested size: 451.6941pt x 289.08589pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 203.
+
+Overfull \hbox (76.35115pt too wide) in paragraph at lines 203--219
+ [][] 
+ []
+
+[21 <C:/Users/emily m/Documents/GitHub/TYP/Bush01andObama09.pdf>]
+<Bush02andObama10.pdf, id=113, 794.97pt x 505.89pt>
+File: Bush02andObama10.pdf Graphic file (type pdf)
+ <use Bush02andObama10.pdf>
+Package pdftex.def Info: Bush02andObama10.pdf used on input line 227.
+(pdftex.def)             Requested size: 451.6941pt x 289.08589pt.
+
+Overfull \hbox (81.00488pt too wide) in paragraph at lines 236--252
+ [][] 
+ []
+
+[22] [23 <C:/Users/emily m/Documents/GitHub/TYP/Bush02andObama10.pdf>]
+<Bush06andBush07.pdf, id=126, 794.97pt x 505.89pt>
+File: Bush06andBush07.pdf Graphic file (type pdf)
+ <use Bush06andBush07.pdf>
+Package pdftex.def Info: Bush06andBush07.pdf used on input line 266.
+(pdftex.def)             Requested size: 451.6941pt x 289.08589pt.
+
+Overfull \hbox (57.56093pt too wide) in paragraph at lines 275--291
+ [][] 
+ []
+
+[24] <Obama10andObama11.pdf, id=130, 794.97pt x 505.89pt>
+File: Obama10andObama11.pdf Graphic file (type pdf)
+
+<use Obama10andObama11.pdf>
+Package pdftex.def Info: Obama10andObama11.pdf used on input line 304.
+(pdftex.def)             Requested size: 451.6941pt x 289.08589pt.
+ [25 <C:/Users/emily m/Documents/GitHub/TYP/Bush06andBush07.pdf>]
+Overfull \hbox (25.96255pt too wide) in paragraph at lines 313--329
+ [][] 
+ []
+
+[26 <C:/Users/emily m/Documents/GitHub/TYP/Obama10andObama11.pdf>] [27]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 349.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Overfull \hbox (7.09038pt too wide) in paragraph at lines 345--346
+Overfull \hbox (7.09038pt too wide) in paragraph at lines 349--350
 $\T1/aett/m/n/12 / / www . washingtonpost . com / wp-[]dyn / content / article 
 / 2008 / 02 / 1 / AR2008021902459 .$
  []
 
-[26] [27]
-Overfull \hbox (4.31029pt too wide) in paragraph at lines 407--408
+[28]
+Overfull \hbox (4.31029pt too wide) in paragraph at lines 411--412
 $\T1/aett/m/n/12 ei = 5090&en = 22149dc70c0731d8&ex = 1275883200&partner = rssu
 serland&emc = rss.$\T1/aer/m/n/12 Last
  []
 
 
-Overfull \hbox (117.61354pt too wide) in paragraph at lines 409--410
+Overfull \hbox (117.61354pt too wide) in paragraph at lines 413--414
 $\T1/aett/m/n/12 www . nytimes . com / 2005 / 06 / 10 / politics / 11cooney . l
 ong . html ? ex = 1276056000&en = 7da9d69d3b1ecb1a&ei =$
  []
 
-[28] [29]
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 473.
+[29]
+Overfull \hbox (13.75171pt too wide) in paragraph at lines 425--425
+[]\T1/aer/bx/n/17.28 Appendix A: Ap-point-met Cat-e-gories in Fed-scope Data 
+ []
+
+[30]
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 477.
 
  (C:/PROGRA~1/R/R-30~1.3/share/texmf/tex/latex\ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <12> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 473.
- [30]
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 477.
+ [31]
 ("C:\Users\emily m\Documents\GitHub\TYP\ToughChoicesTYPDraft1.aux")
 
 LaTeX Warning: There were multiply-defined labels.
@@ -434,11 +440,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  3047 strings out of 494045
  43395 string characters out of 3145963
- 99843 words of memory out of 3000000
+ 98843 words of memory out of 3000000
  6258 multiletter control sequences out of 15000+200000
  39484 words of font info for 80 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 35i,8n,21p,1605b,262s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,8n,21p,1803b,262s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\emily m\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
 0\tcrm1200.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
@@ -447,11 +453,12 @@ mmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
 pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ToughChoicesTYPDraft1.pdf (30 pages, 256709 bytes).
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on ToughChoicesTYPDraft1.pdf (31 pages, 269678 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
+ 204 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  45 words of extra memory for PDF output out of 10000 (max. 10000000)
 
