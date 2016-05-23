@@ -1,0 +1,11 @@
+
+Congress,MajorityParty,NumberMajority,MajorityMedianFirst,MajorityMedianSecond,MinorityParty,NumberMinority,MinorityMedianFirst,MinorityMedianSecond
+105,Republican,55,0.384,-0.313,Democrat,46,-0.350,0.079
+106,Republican,56,0.377,-0.320,Democrat,47,-0.344,0.117
+107,Republican,51,0.392,-0.279,Democrat,50,-0.346,0.120
+108,Republican,52,0.402,-0.262,Democrat,48,-0.355,0.119
+109,Republican,56,0.434,-0.204,Democrat,45,-0.376,0.032
+110,Republican,52,0.456,-0.193,Democrat,50,-0.374,0.119
+111,Democrat,63,-0.380,0.106,Republican,44,0.492,-0.142
+112,Democrat,53,-0.365,0.033,Republican,48,0.532,-0.119
+113,Democrat,56,-0.400,0.041,Republican,46,0.576,-0.058

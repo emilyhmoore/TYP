@@ -1,0 +1,39 @@
+\documentclass{article}
+
+\usepackage{Sweave}
+\begin{document}
+\input{SeparatePresidentCountMods-concordance}
+
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{Counts of Schedule C Appointees} \\ 
+\\[-1.8ex] & (Clinton Model) & (Bush Model) & (Obama Model)\\ 
+\hline \\[-1.8ex] 
+ Agency Ideology & 4.876$^{***}$ & 2.940$^{***}$ & 4.045$^{***}$ \\ 
+  & (1.461) & (1.041) & (1.126) \\ 
+  & & & \\ 
+ Divided Government &  & 0.064$^{**}$ & 0.014 \\ 
+  &  & (0.031) & (0.025) \\ 
+  & & & \\ 
+ Constant & 1.418$^{***}$ & 1.340$^{***}$ & 1.477$^{***}$ \\ 
+  & (0.290) & (0.192) & (0.219) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 225 & 609 & 379 \\ 
+Log Likelihood & $-$392.970 & $-$1,211.630 & $-$637.209 \\ 
+$\theta$ & 132,745.800  (568,440.600) & 51.519$^{***}$  (10.319) & 67,199.220  (227,321.900) \\ 
+Akaike Inf. Crit. & 937.940 & 2,579.261 & 1,428.418 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+
+\end{document}

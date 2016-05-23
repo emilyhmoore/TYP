@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 NOV 2015 08:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 JAN 2016 11:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -334,15 +334,15 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 26.
+(Font)              <12> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 26.
+(Font)              <8> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 26.
+(Font)              <6> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 26.
+(Font)              <5> on input line 29.
 
-Underfull \hbox (badness 1067) in paragraph at lines 26--26
+Underfull \hbox (badness 1067) in paragraph at lines 29--29
 \T1/aer/m/n/10 will-ing to pro-duce strin-gent enough reg-u-la-tions. More in-f
 or-ma-tion can be found in this ar-ti-cle:
  []
@@ -350,27 +350,110 @@ or-ma-tion can be found in this ar-ti-cle:
 [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] [4] [5] [6] (./ScheduleCAppointmentsandPresidentialUnilateralPowers.aux
-) ) 
+[2] [3] [4] [5] [6] [7] [8] [9]
+<PlumBookPage.png, id=39, 1004.75375pt x 752.8125pt>
+File: PlumBookPage.png Graphic file (type png)
+ <use PlumBookPage.png>
+Package pdftex.def Info: PlumBookPage.png used on input line 74.
+(pdftex.def)             Requested size: 505.88652pt x 397.4954pt.
+
+Overfull \hbox (36.1315pt too wide) in paragraph at lines 74--75
+ [] 
+ []
+
+[10 <./PlumBookPage.png>] [11]
+<SCAptsandAccOverTime.pdf, id=48, 1084.05pt x 722.7pt>
+File: SCAptsandAccOverTime.pdf Graphic file (type pdf)
+
+<use SCAptsandAccOverTime.pdf>
+Package pdftex.def Info: SCAptsandAccOverTime.pdf used on input line 93.
+(pdftex.def)             Requested size: 505.88104pt x 361.3491pt.
+
+Overfull \hbox (36.12602pt too wide) in paragraph at lines 93--94
+ [] 
+ []
+
+[12] [13 <./SCAptsandAccOverTime.pdf>]
+<DHSProportionRawNumber.pdf, id=62, 1373.13pt x 722.7pt>
+File: DHSProportionRawNumber.pdf Graphic file (type pdf)
+
+<use DHSProportionRawNumber.pdf>
+Package pdftex.def Info: DHSProportionRawNumber.pdf used on input line 112.
+(pdftex.def)             Requested size: 433.60681pt x 216.81166pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14] [15 <./DHSProportionRawNumber.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[16] [17]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 184.
+
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+Overfull \hbox (7.09038pt too wide) in paragraph at lines 184--185
+\T1/aett/m/n/12 / / www . washingtonpost . com / wp-[]dyn / content / article /
+ 2008 / 02 / 1 / AR2008021902459 .
+ []
+
+[18]
+Overfull \hbox (88.10582pt too wide) in paragraph at lines 198--199
+\T1/aett/m/n/12 chances-[]for-[]obama-[]nominees-[]to-[]be-[]confirmed-[]are-[]
+falling-[]even-[]with-[]over-[]two-[]years-[]to-[]go /
+ []
+
+
+Overfull \hbox (6.17854pt too wide) in paragraph at lines 198--199
+\T1/aett/m/n/12 2014 / 03 / 26 / 73a87b84-[]b107-[]11e3-[]9627-[]c65021d6d572 _
+ story . html$\T1/aer/m/n/12 . Last ac-cessed De-
+ []
+
+[19] [20]
+Overfull \hbox (16.47815pt too wide) in paragraph at lines 244--245
+\T1/aer/m/n/12 Po-lit-i-cal Ap-pointee Project. $\T1/aett/m/n/12 http : / / www
+ . politicalappointeeproject . org / commentary /
+ []
+
+
+Overfull \hbox (4.31029pt too wide) in paragraph at lines 246--247
+\T1/aett/m/n/12 ei = 5090 & en = 22149dc70c0731d8 & ex = 1275883200 & partner =
+ rssuserland & emc = rss.$\T1/aer/m/n/12 Last
+ []
+
+
+Overfull \hbox (99.10968pt too wide) in paragraph at lines 248--249
+\T1/aett/m/n/12 www . nytimes . com / 2005 / 06 / 10 / politics / 11cooney . lo
+ng . html ? ex = 1276056000 & en = 7da9d69d3b1ecb1a &
+ []
+
+[21] [22] (./ScheduleCAppointmentsandPresidentialUnilateralPowers.aux) ) 
 Here is how much of TeX's memory you used:
- 3287 strings out of 493089
- 47960 string characters out of 6134842
- 110761 words of memory out of 5000000
- 6688 multiletter control sequences out of 15000+600000
- 33115 words of font info for 68 fonts, out of 8000000 for 9000
+ 3334 strings out of 493089
+ 48801 string characters out of 6134842
+ 112769 words of memory out of 5000000
+ 6723 multiletter control sequences out of 15000+600000
+ 36082 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,23p,2072b,183s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pf
-b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on ScheduleCAppointmentsandPresidentialUnilateralPowers.pdf (6 p
-ages, 95979 bytes).
+ 37i,8n,23p,2628b,262s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on ScheduleCAppointmentsandPresidentialUnilateralPowers.pdf (22 
+pages, 512075 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 133 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 5 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 20 words of extra memory for PDF output out of 10000 (max. 10000000)
 

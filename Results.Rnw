@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Wed, Jan 27, 2016 - 16:05:19
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & AllCount &   \\ 
+\\[-1.8ex] & \textit{Model 1} & \textit{Model 2} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ Ideological Distance & $-$2.516$^{***}$ & $-$2.516$^{***}$ \\ 
+  & (0.286) & (0.454) \\ 
+  & & \\ 
+ Obama & $-$1.861$^{***}$ & $-$1.861$^{***}$ \\ 
+  & (0.393) & (0.330) \\ 
+  & & \\ 
+ Clinton & $-$0.646$^{***}$ & $-$0.646$^{***}$ \\ 
+  & (0.210) & (0.200) \\ 
+  & & \\ 
+ Intrabranch Conflict & 3.628$^{**}$ & 3.628$^{***}$ \\ 
+  & (1.831) & (0.854) \\ 
+  & & \\ 
+ Interbranch Conflict & $-$1.263 & $-$1.263$^{***}$ \\ 
+  & (0.904) & (0.305) \\ 
+  & & \\ 
+ Size In Thousands & 0.009$^{***}$ & 0.009$^{***}$ \\ 
+  & (0.001) & (0.002) \\ 
+  & & \\ 
+ First Year of Term & $-$0.317$^{*}$ & $-$0.317$^{***}$ \\ 
+  & (0.188) & (0.055) \\ 
+  & & \\ 
+ Last Year of Term & $-$0.026 & $-$0.026 \\ 
+  & (0.177) & (0.022) \\ 
+  & & \\ 
+ Constant & 2.598$^{*}$ & 2.598$^{***}$ \\ 
+  & (1.438) & (0.356) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Clustered Standard Errors& no & yes\\
+\hline \\[-1.8ex] 
+Observations & 811 &  \\ 
+Log Likelihood & $-$3,208.523 &  \\ 
+$\theta$ & 0.452$^{***}$  (0.022) &  \\ 
+Akaike Inf. Crit. & 6,435.046 &  \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+
+\end{document}

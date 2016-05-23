@@ -1,0 +1,378 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 MAY 2016 15:38
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**ExceptedAppointmentsUnilateralPowersJOP.tex
+(./ExceptedAppointmentsUnilateralPowersJOP.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count90
+))
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(./ExceptedAppointmentsUnilateralPowersJOP.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+)
+\openout1 = `ExceptedAppointmentsUnilateralPowersJOP.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count91
+\scratchdimen=\dimen113
+\scratchbox=\box26
+\nofMPsegments=\count92
+\nofMParguments=\count93
+\everyMPshowfont=\toks16
+\MPscratchCnt=\count94
+\MPscratchDim=\dimen114
+\MPnumerator=\count95
+\makeMPintoPDFobject=\count96
+\everyMPtoPDFconversion=\toks17
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 17.
+
+
+LaTeX Warning: No \author given.
+
+[1
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 34.
+ [1]
+Underfull \hbox (badness 1028) in paragraph at lines 39--39
+\OT1/cmr/m/n/10 will-ing to pro-duce strin-gent enough reg-u-la-tions. More in-
+for-ma-tion can be found in this ar-ti-cle:
+ []
+
+[2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17]
+[18] [19] [20] [21]
+Overfull \hbox (7.61205pt too wide) in paragraph at lines 156--157
+\OT1/cmtt/m/n/12 / / www . washingtonpost . com / wp-[]dyn / content / article 
+/ 2008 / 02 / 1 / AR2008021902459 .
+ []
+
+
+Overfull \hbox (144.28711pt too wide) in paragraph at lines 178--179
+\OT1/cmtt/m/n/12 politics / chances-[]for-[]obama-[]nominees-[]to-[]be-[]confir
+med-[]are-[]falling-[]even-[]with-[]over-[]two-[]years-[]to-[]go /
+ []
+
+
+Overfull \hbox (6.6786pt too wide) in paragraph at lines 178--179
+\OT1/cmtt/m/n/12 2014 / 03 / 26 / 73a87b84-[]b107-[]11e3-[]9627-[]c65021d6d572 
+_ story . html$\OT1/cmr/m/n/12 . Last ac-cessed De-
+ []
+
+[22]
+Overfull \hbox (357.74959pt too wide) in paragraph at lines 194--195
+\OT1/cmr/m/n/12 looms." \OT1/cmr/m/it/12 Wash-ing-ton Post. $\OT1/cmtt/m/n/12 h
+ttps : / / www . washingtonpost . com / politics / congress-[]struggles-[]to-[]
+fix-[]budget-[]gridlock-[]as-[]another-[]deadline-[]looms /
+ []
+
+[23]
+Overfull \hbox (17.03918pt too wide) in paragraph at lines 232--233
+\OT1/cmr/m/n/12 Po-lit-i-cal Ap-pointee Project. $\OT1/cmtt/m/n/12 http : / / w
+ww . politicalappointeeproject . org / commentary /
+ []
+
+
+Overfull \hbox (4.83264pt too wide) in paragraph at lines 234--235
+\OT1/cmtt/m/n/12 ei = 5090 & en = 22149dc70c0731d8 & ex = 1275883200 & partner 
+= rssuserland & emc = rss.$\OT1/cmr/m/n/12 Last
+ []
+
+
+Overfull \hbox (99.73709pt too wide) in paragraph at lines 236--237
+\OT1/cmtt/m/n/12 www . nytimes . com / 2005 / 06 / 10 / politics / 11cooney . l
+ong . html ? ex = 1276056000 & en = 7da9d69d3b1ecb1a &
+ []
+
+
+Overfull \hbox (139.78711pt too wide) in paragraph at lines 244--245
+\OT1/cmtt/m/n/12 / / www . bostonglobe . com / news / nation / 2013 / 03 / 10 /
+ obama-[]senate-[]collide-[]gridlock-[]hits-[]federal-[]courts /
+ []
+
+
+Overfull \hbox (143.81516pt too wide) in paragraph at lines 252--253
+\OT1/cmr/m/it/12 Times $\OT1/cmtt/m/n/12 http : / / www . nytimes . com / 2013 
+/ 07 / 08 / us / politics / in-[]congress-[]gridlock-[]and-[]harsh-[]consequenc
+es .
+ []
+
+[24]
+Overfull \hbox (14.66243pt too wide) in paragraph at lines 260--299
+ [][] 
+ []
+
+[25] <PlumBookPage.png, id=99, 1004.75375pt x 752.8125pt>
+File: PlumBookPage.png Graphic file (type png)
+
+<use PlumBookPage.png>
+Package pdftex.def Info: PlumBookPage.png used on input line 304.
+(pdftex.def)             Requested size: 505.88652pt x 397.4954pt.
+
+Overfull \hbox (36.1315pt too wide) in paragraph at lines 304--305
+ [] 
+ []
+
+[26 <./PlumBookPage.png>]
+<SCAptsandAccOverTime.pdf, id=105, 1156.32pt x 939.51pt>
+File: SCAptsandAccOverTime.pdf Graphic file (type pdf)
+
+<use SCAptsandAccOverTime.pdf>
+Package pdftex.def Info: SCAptsandAccOverTime.pdf used on input line 312.
+(pdftex.def)             Requested size: 505.88876pt x 397.48734pt.
+
+Overfull \hbox (36.13374pt too wide) in paragraph at lines 312--313
+ [] 
+ []
+
+[27 <./SCAptsandAccOverTime.pdf>]
+<CountofSCsOverTimeSelectAgencies.pdf, id=115, 867.24pt x 1156.32pt>
+File: CountofSCsOverTimeSelectAgencies.pdf Graphic file (type pdf)
+
+<use CountofSCsOverTimeSelectAgencies.pdf>
+Package pdftex.def Info: CountofSCsOverTimeSelectAgencies.pdf used on input lin
+e 320.
+(pdftex.def)             Requested size: 433.61894pt x 578.15858pt.
+ [28 <./CountofSCsOverTimeSelectAgencies.pdf>] <ResultsPlots.pdf, id=125, 505.8
+9pt x 433.62pt>
+File: ResultsPlots.pdf Graphic file (type pdf)
+
+<use ResultsPlots.pdf>
+Package pdftex.def Info: ResultsPlots.pdf used on input line 328.
+(pdftex.def)             Requested size: 325.2197pt x 289.09473pt.
+ [29 <./ResultsPlots.pdf>]
+<DHSProportionRawNumber.pdf, id=140, 1373.13pt x 722.7pt>
+File: DHSProportionRawNumber.pdf Graphic file (type pdf)
+
+<use DHSProportionRawNumber.pdf>
+Package pdftex.def Info: DHSProportionRawNumber.pdf used on input line 336.
+(pdftex.def)             Requested size: 433.60681pt x 216.81166pt.
+ [30 <./DHSProportionRawNumber.pdf>] [31]
+<HistogramScheduleCCount.pdf, id=153, 650.43pt x 578.16pt>
+File: HistogramScheduleCCount.pdf Graphic file (type pdf)
+
+<use HistogramScheduleCCount.pdf>
+Package pdftex.def Info: HistogramScheduleCCount.pdf used on input line 392.
+(pdftex.def)             Requested size: 361.36014pt x 289.07928pt.
+ [32 <./HistogramScheduleCCount.pdf>]
+(./ExceptedAppointmentsUnilateralPowersJOP.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2119 strings out of 493089
+ 31454 string characters out of 6134842
+ 98608 words of memory out of 5000000
+ 5586 multiletter control sequences out of 15000+600000
+ 9324 words of font info for 33 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 37i,9n,23p,2445b,258s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on ExceptedAppointmentsUnilateralPowersJOP.pdf (34 pages, 561452
+ bytes).
+PDF statistics:
+ 200 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+

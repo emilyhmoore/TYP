@@ -1,0 +1,14 @@
+\documentclass[12pt]{article}
+\usepackage[top=1in, bottom=1in, right=1in, left=1in]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{url}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+Hi
+
+\end{document}

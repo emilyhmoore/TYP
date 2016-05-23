@@ -1,4 +1,6 @@
-setwd("C:/Users/emily m/Documents/GitHub/TYP")
+setwd("~/TYP")
+
+##Need to make these files into one thing.
 
 idMaker<-function(data){
   stringlist<-  strsplit(data$Agency, "-")
@@ -872,7 +874,7 @@ Acc114<-merge(Acc111, Acc112, by="id", all.x=TRUE, all.y=TRUE)
 
 Accessions<-merge(Acc113, Acc114, by="id", all.x=TRUE, all.y=TRUE)
 
-
+#write.csv(Accessions, "Accessions05to14.csv")
 
 ##############################Analysis#################
 total.Index<-grep("Total.Accessions",colnames(Accessions))
@@ -907,17 +909,22 @@ SCC.ByFiscalYear<-c(sum(SCC.TransfersPlusHires[1:12]),sum(SCC.TransfersPlusHires
 
 plot(SCC.TransfersPlusHires,x=1:114, pch=20, type="o", ylim=c(0, 250))
 
-par(mfrow=c(1,1))
-
-plot(y=TotalSCOverTime/1000,x=c(1998:2013), xlim=c(1998,2014), xlab="Year", 
+par(mfrow=c(1,1), mar=c(3,5,4,2))
+plot(y=TotalSCOverTime,x=c(1998:2013), xlim=c(1998,2014), xlab="", 
           ylab="Appointments (In Thousands)", xaxp=c(1998,2014, 16),
-          pch=20, type='o', ylim=c(0,2),
+          pch=20, type='o', ylim=c(0,2000),
           col="black", lwd=2, 
           main="Schedule C Appointments Over Time")
 abline(v=2008.5, col="blue")
-lines(SCC.ByFiscalYear/1000,x=2005:2014, pch=20, type="o", lwd=2, main="Total.Accessions",
+abline(v=2000.5, col="red")
+
+lines(SCC.ByFiscalYear,x=2005:2014, pch=20, type="o", lwd=2, main="Total.Accessions",
       col="purple")
-abline(v=2008.5, col="blue")
+legend(x=2000.5,y=2100.1, legend=c("Total Number of Appointments", "Total New Hires and Transfers"), 
+       lty=c(1,1), col=c("black", "purple"), bty="n", lwd=3, y.intersp=0.7, seg.len=1)
+text(x=1999, y=0.1, labels="Clinton")
+text(x=2004.5, y=0.1, labels="Bush")
+text(x=2011.5, y=0.1, labels="Obama")
 
 plot(SCC.TransfersPlusHires,x=seq(2004.75,2014.25, length.out=114), 
      xaxp=c(2004.75, 2014.25, 38),
@@ -932,6 +939,12 @@ grep("Agency", colnames(Apts))
 SCC.TransfersPlusHires
 SCC.ByFiscalYear
 TotalSCOverTime[8:16]
+
+SCC.ByFiscalYear/TotalSCOverTime[8:16]
+
+SCC.ByFiscalYear[5]/TotalSCOverTime[12]
+
+TotalSCOverTime
 
 ##########################Looking at SCC+SES+XS:Exec############
 

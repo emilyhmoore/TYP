@@ -1,4 +1,4 @@
-setwd("C:/Users/emily m/Documents/GitHub/TYP")
+setwd("~/TYP")
 ##Data
 
 subber<-function(i, data, dupl=dupl){
@@ -385,7 +385,7 @@ Apts14<-merge(Apts11,Apts12, by="id", all.x=TRUE, all.y=TRUE)
 
 Apts<-merge(Apts13,Apts14, by="id", all.x=TRUE, all.y=TRUE)
 
-#write.csv(Apts, "Sept98thru13Apts.csv", append=TRUE)
+#write.csv(Apts, "Sept98thru13Apts.csv")
 ###############################################
 
 
@@ -422,9 +422,10 @@ plot(y=TotalOverTime/1000,x=c(1998:2013),xlim=c(1998,2013), xlab="Year",
 abline(v=2000.5, col="red")
 abline(v=2008.5, col="blue")
 
-plot(y=TotalSCOverTime/1000,x=c(1998:2013), xlim=c(1998,2013), xlab="Year", 
-     ylab="Appointments (In Thousands)", xaxp=c(1998,2013, 15),
-     pch=20, type='o', ylim=c(0,2),
+par(mfrow=c(1,1))
+plot(y=TotalSCOverTime,x=c(1998:2013), xlim=c(1998,2013), xlab="Year", 
+     ylab="Appointments", xaxp=c(1998,2013, 15),
+     pch=20, type='o', ylim=c(0,2000),
      col="black", lwd=2, 
      main="Schedule C Appointments Over Time")
 abline(v=2000.5, col="red")
@@ -448,6 +449,8 @@ abline(v=2008.5, col="blue")
 AnySCs<-apply(Apts[,colsSC]>0, 1, any, na.rm=TRUE)
 SCindex<-which(AnySCs==TRUE)
 totals<-grep("Total.Appts", colnames(Apts))
+totals
+head(Apts[,totals],20)
 
 ##Plot
 par(mfrow=c(4,5), mar=c(2,2,3,2))
@@ -537,7 +540,7 @@ for(i in 16:1){
 
 
 ##Getting just SCC and Exec
-GroupIncluded<-c("ES.Exec", "SCC")
+GroupIncluded<-c("SCC")
 
 ##Loop through all the options
 IncludedIndex<-list()
@@ -555,7 +558,7 @@ ES.fun<-function(number){
   if(number<10){number<-paste("0", as.character(number), sep="")
   } else {number<-as.character(number)}
   res<-Apts[,IncludedIndex][,grep(number,colnames(Apts)[IncludedIndex])]
-  TotalIncludedForYear<-apply(res, 1, sum, na.rm=TRUE)
+  TotalIncludedForYear<-laply(res, sum, na.rm=TRUE) #Changed this from before since I'm only doing Schedule C here.
   return(TotalIncludedForYear)
 }
 
@@ -563,12 +566,12 @@ ES.fun<-function(number){
 ##This gets all of the totals by year and agency
 library(plyr)
 TotalIncludedByYearandAgency<-t(laply(c(98,99,0:13),ES.fun))
-colnames(TotalIncludedByYearandAgency)<-c("ES.98", "ES.99", "ES.00", 
-                                          "ES.01", "ES.02", "ES.03",
-                                          "ES.04", "ES.05", "ES.06",
-                                          "ES.07", "ES.08", "ES.09",
-                                          "ES.10", "ES.11", "ES.12",
-                                          "ES.13")
+colnames(TotalIncludedByYearandAgency)<-c("SCC.98", "SCC.99", "SCC.00", 
+                                          "SCC.01", "SCC.02", "SCC.03",
+                                          "SCC.04", "SCC.05", "SCC.06",
+                                          "SCC.07", "SCC.08", "SCC.09",
+                                          "SCC.10", "SCC.11", "SCC.12",
+                                          "SCC.13")
 
 TotalIncludedByYear<-apply(TotalIncludedByYearandAgency, 2, sum, na.rm=TRUE)
 
@@ -797,13 +800,13 @@ rownames(ProportionQualified)<-rownames(TotalIncludedByYearandAgency)<-Apts[,1]
 
 par(mar=c(4,3,2,2), mfrow=c(1,2))
 plot(unlist(ProportionQualified[grep("HSAA", rownames(ProportionQualified)),6:16]), 
-     x=c(2003:2013), xlab="Year", ylab="", main="Proportion Homeland Security Headquarters that is SC or ESE",
+     x=c(2003:2013), xlab="Year", ylab="", main="Proportion of Schedule Cs in the Homeland Security Headquarters",
      pch=20, type="o", ylim=c(0,1), lwd=2)
 abline(v=2008.5, col="blue")
 
 par(mar=c(4,1,2,2))
 plot(unlist(TotalIncludedByYearandAgency[grep("HSAA", rownames(TotalIncludedByYearandAgency)),6:16]), 
-     x=c(2003:2013), xlab="Year", ylab="", main="Number in Homeland Security Headquarters that is SC or ESE",
+     x=c(2003:2013), xlab="Year", ylab="", main="Number of Schedule Cs in the Homeland Security Headquarters",
      pch=20, type="o", lwd=2, ylim=c(0,90))
 abline(v=2008.5, col="blue")
 
